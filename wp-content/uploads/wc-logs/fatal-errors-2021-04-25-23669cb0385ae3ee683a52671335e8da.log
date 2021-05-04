@@ -1,0 +1,18 @@
+2021-04-25T08:13:27+00:00 CRITICAL Out of memory (allocated 10485760) (tried to allocate 12288 bytes) in D:\SBA\MAKITA\makita-site\wp-includes\pluggable.php on line 336
+
+2021-04-25T11:13:11+00:00 CRITICAL Uncaught Error: Call to undefined function lang_page_original_id() in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\about_makita.php:29
+Stack trace:
+#0 D:\SBA\MAKITA\makita-site\wp-includes\template-loader.php(106): include()
+#1 D:\SBA\MAKITA\makita-site\wp-blog-header.php(19): require_once('D:\\SBA\\MAKITA\\m...')
+#2 D:\SBA\MAKITA\makita-site\index.php(17): require('D:\\SBA\\MAKITA\\m...')
+#3 {main}
+  thrown in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\about_makita.php on line 29
+
+2021-04-25T11:16:04+00:00 CRITICAL Uncaught Error: Call to undefined function lang_page_original_id() in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\about_makita.php:29
+Stack trace:
+#0 D:\SBA\MAKITA\makita-site\wp-includes\template-loader.php(106): include()
+#1 D:\SBA\MAKITA\makita-site\wp-blog-header.php(19): require_once('D:\\SBA\\MAKITA\\m...')
+#2 D:\SBA\MAKITA\makita-site\index.php(17): require('D:\\SBA\\MAKITA\\m...')
+#3 {main}
+  thrown in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\about_makita.php on line 29
+

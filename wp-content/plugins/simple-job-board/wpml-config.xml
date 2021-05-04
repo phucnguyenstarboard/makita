@@ -1,0 +1,10 @@
+<wpml-config>
+  <custom-types>
+    <custom-type translate="1">jobpost</custom-type>
+  </custom-types>
+  <taxonomies>
+    <taxonomy translate="1">jobpost_category</taxonomy>
+    <taxonomy translate="1">jobpost_job_type</taxonomy>
+    <taxonomy translate="1">jobpost_location</taxonomy>
+  </taxonomies>
+</wpml-config>

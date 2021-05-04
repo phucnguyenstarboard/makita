@@ -1,0 +1,24 @@
+2021-04-27T08:00:59+00:00 CRITICAL Uncaught Error: Call to undefined function education_zone_mobile_header() in /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/header.php:27
+Stack trace:
+#0 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template.php(730): require_once()
+#1 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template.php(676): load_template('/home2/starboar...', true, Array)
+#2 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/page.php(15): get_header()
+#4 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template-loader.php(106): include('/home2/starboar...')
+#5 /home2/starboar/domains/starboardasiavn.com/makita/wp-blog-header.php(19): require_once('/home2/starboar...')
+#6 /home2/starboar/domains/starboardasiavn.com/makita/index.php(17): require('/home2/starboar...')
+#7 {main}
+  thrown in /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/header.php on line 27
+
+2021-04-27T08:16:28+00:00 CRITICAL Uncaught Error: Call to undefined function education_zone_mobile_header() in /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/header.php:27
+Stack trace:
+#0 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template.php(730): require_once()
+#1 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template.php(676): load_template('/home2/starboar...', true, Array)
+#2 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/page.php(15): get_header()
+#4 /home2/starboar/domains/starboardasiavn.com/makita/wp-includes/template-loader.php(106): include('/home2/starboar...')
+#5 /home2/starboar/domains/starboardasiavn.com/makita/wp-blog-header.php(19): require_once('/home2/starboar...')
+#6 /home2/starboar/domains/starboardasiavn.com/makita/index.php(17): require('/home2/starboar...')
+#7 {main}
+  thrown in /home2/starboar/domains/starboardasiavn.com/makita/wp-content/themes/education-zone/header.php on line 27
+

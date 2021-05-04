@@ -1,0 +1,11 @@
+2021-04-21T03:32:26+00:00 CRITICAL Uncaught Error: Call to a member function get_link() on null in D:\SBA\MAKITA\makita-site\wp-content\plugins\codepress-admin-columns\classes\Column\Placeholder.php:46
+Stack trace:
+#0 D:\SBA\MAKITA\makita-site\wp-content\plugins\codepress-admin-columns\classes\Controller\ColumnRequest.php(50): AC\Column\Placeholder->get_message()
+#1 D:\SBA\MAKITA\makita-site\wp-content\plugins\codepress-admin-columns\classes\Controller\AjaxColumnRequest.php(58): AC\Controller\ColumnRequest->request(Object(AC\Request))
+#2 D:\SBA\MAKITA\makita-site\wp-includes\class-wp-hook.php(292): AC\Controller\AjaxColumnRequest->handle_ajax_request('')
+#3 D:\SBA\MAKITA\makita-site\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters('', Array)
+#4 D:\SBA\MAKITA\makita-site\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#5 D:\SBA\MAKITA\makita-site\wp-admin\admin-ajax.php(187): do_action('wp_ajax_ac-colu...')
+#6 {main}
+  thrown in D:\SBA\MAKITA\makita-site\wp-content\plugins\codepress-admin-columns\classes\Column\Placeholder.php on line 46
+

@@ -1,0 +1,28 @@
+{
+  "post_types": {
+    "technology": {},
+    "branch": {},
+    "awsm_job_openings":{},
+    "accessory":{},
+    "subsidiary":{}
+
+  },
+  "post_fields": {
+    "descr": {},
+    "makita_global_link":{},
+    "contact_place_name":{},
+    "operating_hours":{},
+    "tel_1":{},
+    "tel_2":{},
+    "fax":{},
+    "map_url":{},
+    "map_image":{},
+    "title_makita":{},
+    "content_makita":{},
+    "footer_tel1":{},
+    "footer_tel2":{}
+  },  
+  "taxonomies": {
+    "subsidiary-category": {}
+  }
+}

@@ -1,0 +1,8 @@
+2021-04-22T07:33:35+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\technology.php:21
+Stack trace:
+#0 D:\SBA\MAKITA\makita-site\wp-includes\template-loader.php(106): include()
+#1 D:\SBA\MAKITA\makita-site\wp-blog-header.php(19): require_once('D:\\SBA\\MAKITA\\m...')
+#2 D:\SBA\MAKITA\makita-site\index.php(17): require('D:\\SBA\\MAKITA\\m...')
+#3 {main}
+  thrown in D:\SBA\MAKITA\makita-site\wp-content\themes\education-zone\technology.php on line 21
+

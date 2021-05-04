@@ -1,0 +1,39 @@
+/*
+Theme Name: CFashionStore Lite
+Theme URI: https://www.themescave.com/themes/free-wordpress-fashion-ecommerce-cfashionstore-lite/
+Author: Themescave
+Author URI: http://www.themescave.com/
+Description: CFashioStore WordPress theme is used for all type of business. That business includes online shopping system software. This theme covered market in all the area like online marketing, online shopping, online medical selling, online selling virtual products, online sell game and software stuff, Online traveling booking, online food stuff selling, Online restaurants, online cake selling, online cloth selling, online cloth shopping stuff for men, women, child and all other type of online business etc. please check theme demo link https://www.themescave.com/demo/cfashionstore-pro/ and theme documentation https://www.themescave.com/documentation/cfashionstore-pro/
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cfashionstore-lite
+Tags: custom-menu,one-column,right-sidebar,theme-options,threaded-comments,translation-ready,blog,custom-background,custom-colors,custom-header,custom-logo,editor-style,featured-images,full-width-template,two-columns,e-commerce,footer-widgets
+
+CFashionStore Lite WordPress Theme, Copyright 2019 themescave(themescave.com)
+CFashionStore Lite is distributed under the terms of the GNU GPL
+*/
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1. Main Tags
+
+-------------------------------------------------------------------*/
+/* Main Tags */
+*{ margin:0; padding:0; outline:none;}
+body{ margin:0; padding:0;line-height:20px; font-size:13px; color:#666; font-family:'PT Sans', Helvetica, sans-serif;}
+ol,ul{ margin:0; padding:0;}
+ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
+h1,h2,h3,h4,h5,h6{ color:#484f5e; font-family:'raleway', sans-serif; margin:0 0 20px; padding:0; line-height:1.1; font-weight:400; }
+h1{ font-size:34px;}
+h2{ font-size:30px;}
+h3{ font-size:26px;}
+h4{ font-size:22px;}
+h5{ font-size:20px;}
+h6{ font-size:16px;}
+img{ border:none; margin:0; padding:0; height:auto}
+html,body {  font-size: 100%; }
+p{ margin:0; padding:0;}
+a{ text-decoration:none; color:#3b3b3b;}
+a:hover{ color:#333;}
