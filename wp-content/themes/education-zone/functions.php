@@ -427,3 +427,6 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+//add custom thumnail size
+add_image_size('news-size',300,200, array('center','center'));
