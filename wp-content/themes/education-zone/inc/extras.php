@@ -63,7 +63,7 @@ if( ! function_exists( 'education_zone_header' ) ):
  * Page Header 
 */
 function education_zone_header(){
-    if( ! ( is_front_page() || is_page_template('template-home.php') ) ){
+    if( ! ( is_front_page() || is_page_template('template-home.php') || is_single() ) ){
     ?>
     <div class="page-header">
 		<div class="container">
@@ -612,11 +612,10 @@ function education_zone_site_header(){
                                         <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">
                                             <span class="fa fa-facebook-official fa-fw fa-3x"></span>
                                         </a>
-                                        <!--<a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">
+                                        <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">
                                             <span class="fa fa-instagram fa-fw fa-3x"></span>
-                                        </a>-->
+                                        </a> -->
                                         <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">
-<!--                                            <span class="fa fa-youtube-square fa-fw fa-3x"></span>-->
                                             <i class="fa fa-youtube-square" aria-hidden="true"></i>
                                         </a>
                                     </div>
