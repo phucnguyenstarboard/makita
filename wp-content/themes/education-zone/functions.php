@@ -199,7 +199,9 @@ function education_zone_scripts() {
 	    wp_enqueue_style( 'category', get_template_directory_uri().'/css/category.css' );
     }
 
-
+    if ( is_page_template( 'templates/template-compare.php' ) ) {
+    	wp_enqueue_style( 'compare', get_template_directory_uri().'/css/compare.css' );
+    }
 
 	if( education_zone_is_woocommerce_activated() )
     wp_enqueue_style( 'education-zone-woocommerce-style', get_template_directory_uri(). '/css' . $build . '/woocommerce' . $suffix . '.css', EDUCATION_ZONE_THEME_VERSION );
