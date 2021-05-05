@@ -11,11 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php 
-        if( has_post_thumbnail() ){
-            echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
-            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'education-zone-image' ) : the_post_thumbnail( 'education-zone-image-full' );
-            echo ( is_single() ) ? '</div>' : '</a>' ; 
-        }
+        // if( has_post_thumbnail() ){
+        //     echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
+        //     ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'education-zone-image' ) : the_post_thumbnail( 'education-zone-image-full' );
+        //     echo ( is_single() ) ? '</div>' : '</a>' ; 
+        // }
     ?>
     
 	<header class="entry-header">

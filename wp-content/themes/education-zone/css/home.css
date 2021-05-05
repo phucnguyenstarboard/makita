@@ -620,7 +620,7 @@ img {
 
 /*end footer*/
 
-#mega-menu-wrap-primary {
+ #mega-menu-wrap-primary {
     background: #008396;
 }
 .site-header .header-m {
@@ -628,10 +628,6 @@ img {
 }
 .home-content{
     padding-top: 0px;
-}
-article{
-    /*clear: both;*/
-    /*margin-bottom: 20px;*/
 }
 .search .site-content #primary .post-thumbnail{
     display: none;
@@ -749,10 +745,10 @@ article{
     height: 100%;
     max-height: 196px;
 }
-#mega-menu-wrap-primary #mega-menu-primary{
+#masthead #mega-menu-wrap-primary #mega-menu-primary{
     font-family: Roboto;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{
+#masthead  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{
     padding:17px 15px;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -760,16 +756,16 @@ article{
     font-family: Roboto;
 
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item{
     vertical-align: middle;
     border-left: 1px solid #fff;
     -webkit-transition: all, 0.2s;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:last-child{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:last-child{
     border-right: 1px solid #fff;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link
-,#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link
+,#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
     /*background:#ED1B24;*/
     background: #008396;
     font-size: 1.2rem;
@@ -777,25 +773,25 @@ article{
     font-family: Roboto;
 
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
     font-size: 1.2rem;
     font-weight: 700;
     font-family: Roboto;
     background: none;
     background: #0099b0;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link[aria-expanded = true] {
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link[aria-expanded = true] {
     /*background:#ED1B24;*/
     background: #008396;
     font-size: 1.2rem;
     font-weight: 700;
     font-family: Roboto;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu{
     background: #555;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link
-,#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link
+,#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link
 {
     color:#FFFFFF;
     font-size: 13px;
@@ -806,23 +802,23 @@ article{
     transition: all 0.2s ease;
     font-family: "Roboto";
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link{
     line-height: 20px;
     padding:2px 0px;
     font-family: Roboto;
     color: #FFFFFF;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus{
     line-height: 20px;
     padding:2px 0px;
     font-family: Roboto;
     color: #FFFFFF;
 }
-#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu{
+#masthead #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu{
     padding-top:12px;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link,
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link,
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -837,21 +833,21 @@ article{
     border-bottom: 1px solid #fff;
     line-height: 20px;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover{
     border-bottom: 1px solid #fff;
     color: #00b0c9;
     font-family: Roboto;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover{
     font-weight: normal;
     text-decoration: none;
     color: #00b0c9;
     font-family: Roboto;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item{
+#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item{
     padding: 15px 25px 15px 25px;
 }
-.mega-menu-link{
+#masthead .mega-menu-link{
     border-bottom : 1px solid;
 }
 
@@ -1075,6 +1071,31 @@ svg:not(:root).svg-inline--fa:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.news_title{
+    margin:0px 0px 5px 0px;
+}
+.news_title a{
+    color:#000;
+}
+
+.news_title a:hover{
+    color: #ec1f27;
+}
+.news_date{
+    font-style: italic;
+    font-size: 14px;
+    color: #888888;
+    margin-bottom:10px;
+}
+.post-navigation .nav-links {
+    visibility: hidden;
+    }
+.entry-title{
+    margin-top: 0px;
+}    
+.news_img img{
+    width: 100%;
 }
 
 /* edn social */
