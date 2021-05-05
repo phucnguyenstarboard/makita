@@ -192,8 +192,12 @@ function education_zone_scripts() {
     wp_enqueue_style( 'education-zone-google-fonts', education_zone_fonts_url() );
     wp_enqueue_style( 'education-zone-style', get_stylesheet_uri(), array(), EDUCATION_ZONE_THEME_VERSION );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'home', get_template_directory_uri().'/css/home.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
+	wp_enqueue_style( 'home', get_template_directory_uri().'/css/home.css' );
+	
+	if( is_archive() ){
+	    wp_enqueue_style( 'category', get_template_directory_uri().'/css/category.css' );
+    }
 
 
 

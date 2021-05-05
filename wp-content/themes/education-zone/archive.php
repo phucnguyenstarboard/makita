@@ -6,7 +6,6 @@
  *
  * @package Education_Zone
  */
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">	
@@ -37,7 +36,7 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content', is_archive() ? 'category' : 'none' );
 
 		endif; ?>
 
