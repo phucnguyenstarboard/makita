@@ -24,20 +24,27 @@ $lg = get_locale();
         <div class="featured_products">
             <div class="container">
                 <?php
-                    $tax_query[] = array(
-                        'taxonomy' => 'product_visibility',
-                        'field'    => 'name',
-                        'terms'    => 'featured',
-                        'operator' => 'IN',
-                    );
-                $args = array( 'post_type' => 'product','ignore_sticky_posts' => 1, 'tax_query' => $tax_query);
+//                    $tax_query[] = array(
+//                        'taxonomy' => 'product_visibility',
+//                        'field'    => 'name',
+//                        'terms'    => 'featured',
+//                        'operator' => 'IN',
+//                    );
+                $args = array(
+                    'post_type' => 'product',
+                   // 'ignore_sticky_posts' => 1,
+                    'meta_key' => '_is_ns_featured_post',
+                    'meta_value' => 'yes'
+                );
                 $feat_pro = new WP_query( $args);
                 ?>
 
 
 
                 <div class="slider responsive_featured">
-                    <?php  while ( $feat_pro->have_posts() ) : $feat_pro->the_post();?>
+                    <?php  while ( $feat_pro->have_posts() ) : $feat_pro->the_post();
+                        $product_code = get_field_object('product_code' , get_the_ID());
+                        ?>
                     <div class="featured_item">
                         <a href="<?php the_permalink(); ?>">
                             <div class="item">
@@ -47,7 +54,7 @@ $lg = get_locale();
                                 <div class="item-content">
                                     <div class="item-title">
                                         <h3><?php the_title(); ?></h3>
-                                        <span><?php echo get_post_meta( get_the_ID(), '_sku', true ); ?>  </span>
+                                        <span><?php echo empty($product_code['value']) ?  '' : $product_code['value'];?></span>
                                         <small></small> <i class="fa fa-caret-right"></i></span>
                                     </div>
                                 </div>
