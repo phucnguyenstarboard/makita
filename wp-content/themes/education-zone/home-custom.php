@@ -75,7 +75,7 @@ $lg = get_locale();
                 );
                 $the_query = new WP_Query( $args );
             ?>
-            <div class="container">
+            <div class="container-fluid">
                 <h1 class="m-tb50">
                     <?php if($lg == 'en_US'){
                         echo "Technologies" ;
@@ -132,51 +132,64 @@ $lg = get_locale();
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12  p-0">
-                        <div class="news_block mh_350">
+                        <div class="news_block mh_350 home_footer">
                             <div class="news_block_middle">
-                                <div class="text-left p-tb20 p-lr50" >
-                                    <h1 class="name">What's On</h1>
-                                    <div class="widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                        <div class="recent-posts-entry-date" onclick="location.href = 'news-events/?pagedetail=951';">
-                                            <div class="wt-post-date text-center text-uppercase text-white">
-                                                <h2 class="title_1">MAY</h2>
-                                                <h1 >12</h1>
+                                <div class="text-leff" >
+                                    <div class="row">
+                                        <div class="col-sm-8 col-12 text-center" data-cattype="1802">
+                                            <?php
+                                            $arr_footer = array(
+                                                'post_type'=>'page',
+                                                'page_id'=> 249
+                                            );
+                                            $makita_footer = new WP_Query($arr_footer);
+                                            ?>
+                                            <?php while($makita_footer->have_posts()): $makita_footer->the_post(); ?>
+                                                <?php
+                                                $tel1 = get_post_meta(get_the_ID(),'footer_tel1',true);
+                                                $tel2= get_post_meta(get_the_ID(),'footer_tel2',true);
+                                                ?>
+                                                <?php if(!empty($tel1)): ?>
+                                                    <h1 class="tel mt-2 mb-2 ">
+                                                        <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
+                                                        <a href="tel: <?php echo  $tel1; ?>"><?php echo $tel1; ?></a>
+                                                    </h1>
+                                                <?php endif;
+                                                if(!empty($tel2)):
+                                                    ?>
+                                                    <h1 class="tel mt-2 mb-2 ">
+                                                        <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
+                                                        <a href="tel: <?php echo $tel2; ?>"><?php echo $tel2; ?></a>
+                                                    </h1>
+                                                <?php endif; endwhile; ?>
+                                            <div>
+                                                <div class="search-container text-center mt-5 mb-3">
+                                                    <div class="search_wrap d-inline-block">
+                                                        <form action="generalenquiry?" class="newsletterEnquiry" method="post" data-fail-pageid="505" data-pass-pageid="505" id="inlineEnquiry">
+                                                            <input name="Subjust" type="hidden" value="Newsletter subscription request" /> <input class="input-news" type="text" placeholder="Newsletter Sign Up" name="email" />
+                                                            <button class="submit-news hvr-rectangle-out" type="submit"><i class="fa fa-caret-right"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </div>
 
                                             </div>
-                                            <div class="wt-post-info">
-                                                <h2 class="post-title">
-                                                    <a href="news-events/?pagedetail=951">April New Product Launching Promotion</a>
-                                                </h2>
+
+                                        </div>
+                                        <div class="col-sm-4 col-12 home_menu text-center text-sm-start">
+                                            <div class="d-inline-block text-start" >
+                                                <?php
+                                                wp_nav_menu( array(
+                                                    'menu'     => 'Footer menu',
+                                                    'sub_menu' => false,
+                                                    'show_parent' => true,
+                                                    'depth' => 1
+                                                ) );
+
+                                                ?>
                                             </div>
+
                                         </div>
                                     </div>
-                                    <div class="widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                        <div class="recent-posts-entry-date" onclick="location.href = 'news-events/?pagedetail=950';">
-                                            <div class="wt-post-date text-center text-uppercase text-white">
-                                                <h1 class="title_1">08</h1>
-                                                <h2 >Apr</h2>
-                                            </div>
-                                            <div class="wt-post-info">
-                                                <h2 class="post-title">
-                                                    <a href="news-events/?pagedetail=950">Raya and Parents Day Promotion</a>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                        <div class="recent-posts-entry-date" onclick="location.href = 'news-events/?pagedetail=938';">
-                                            <div class="wt-post-date text-center text-uppercase text-white">
-                                                <h1 class="title_1">10</h1>
-                                                <h2>Mar</h2>
-                                            </div>
-                                            <div class="wt-post-info">
-                                                <h2 class="post-title">
-                                                    <a href="news-events/?pagedetail=938">March New Product Launching Promotion</a>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="site-button-secondry hvr-rectangle-out text-uppercase text-center" href="news-events/">More</a>
                                 </div>
                             </div>
                         </div>

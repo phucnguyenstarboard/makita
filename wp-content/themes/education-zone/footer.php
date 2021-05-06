@@ -19,106 +19,106 @@
 <?php } } ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter" data-cattype="1802">
-        <div class="footer-middle">
-            <div class="container pd-mfooter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-3  border-shadow-right">
-                            <?php 
-                            wp_nav_menu( array(
-                              'menu'     => 'Footer menu',
-                              'sub_menu' => true,
-                              'show_parent' => true,
-                            ) );
-
-                             ?>
-
-                        </div>
-                        <div class="col-md-6 col-sm-5 p-lr30 ">
-                            <h2>Find a dealer</h2>
-                            <ul class="search-container p-b20">
-                                <li>
-                                    <div class="search-container p-b20">
-                                <span class="select_box">
-                                    <select class="select-region">
-                                        <option value="Dealers/?regionid=11">All</option>
-                                        <option value="Dealers/?regionid=191">KL &amp; Selangor</option>
-                                        <option value="Dealers/?regionid=42">Johor</option>
-                                        <option value="Dealers/?regionid=43">Kedah</option>
-                                        <option value="Dealers/?regionid=51">Kelantan</option>
-                                        <option value="Dealers/?regionid=53">Melaka</option>
-                                        <option value="Dealers/?regionid=98">Negeri Sembilan</option>
-                                        <option value="Dealers/?regionid=175">Pahang</option>
-                                        <option value="Dealers/?regionid=54">Penang</option>
-                                        <option value="Dealers/?regionid=55">Perak</option>
-                                        <option value="Dealers/?regionid=56">Perlis</option>
-                                        <option value="Dealers/?regionid=70">Terengganu</option>
-                                        <option value="Dealers/?regionid=58">Sabah</option>
-                                        <option value="Dealers/?regionid=59">Sarawak</option>
-                                    </select>
-                                </span>
-                                        <button class="submit-region hvr-rectangle-out" type="submit">Search</button>
-                                    </div>
-                                </li>
-                            </ul>
-                            
-                        </div>
-                        <div class="col-md-4 col-sm-4 p-lr30 border-shadow-left footer-right">
-                             <?php
-                                    $arr_footer = array(
-                                         'post_type'=>'page',
-                                        'page_id'=> 249 
-                                    );
-                                    $makita_footer = new WP_Query($arr_footer);
-                                 ?>
-                                <?php while($makita_footer->have_posts()): $makita_footer->the_post(); ?> 
-                                    <?php 
-                                        $tel1 = get_post_meta(get_the_ID(),'footer_tel1',true);
-                                        $tel2= get_post_meta(get_the_ID(),'footer_tel2',true); 
-                                     ?>
-                                     <?php if(!empty($tel1)): ?>
-                                    <h1 class="tel mt-2 mb-2 ">
-                                        <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
-                                        <a href="tel: <?php echo  $tel1; ?>"><?php echo $tel1; ?></a>
-                                    </h1>
-                                <?php endif;
-                                    if(!empty($tel2)):
-                                 ?>
-                                    <h1 class="tel mt-2 mb-2 ">
-                                        <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
-                                        <a href="tel: <?php echo $tel2; ?>"><?php echo $tel2; ?></a>
-                                    </h1>
-                                <?php endif; endwhile; ?>
-                                <div class="footer_social mt-2 mb-2">
-                                    <div class="social_title">
-                                        <h2><?php echo __("Connect with us","education-zone") ?></h2>
-                                    </div>
-                                    <div class="footer_social_icon g-social">
-                                          <div id="social-3453-particle" class="g-content g-particle">
-                                <div class="bnm-social">
-                                    <div class="g-social">
-                                        <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">
-                                            <span class="fa fa-facebook-official fa-fw fa-3x"></span>
-                                        </a>
-                                        <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">
-                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                                    </div>
-                                </div>
-                            
-                            <div class="search-container">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="footer-middle">-->
+<!--            <div class="container pd-mfooter">-->
+<!--                <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-2 col-sm-3  border-shadow-right">-->
+<!--                            --><?php //
+//                            wp_nav_menu( array(
+//                              'menu'     => 'Footer menu',
+//                              'sub_menu' => true,
+//                              'show_parent' => true,
+//                            ) );
+//
+//                             ?>
+<!---->
+<!--                        </div>-->
+<!--                        <div class="col-md-6 col-sm-5 p-lr30 ">-->
+<!--                            <h2>Find a dealer</h2>-->
+<!--                            <ul class="search-container p-b20">-->
+<!--                                <li>-->
+<!--                                    <div class="search-container p-b20">-->
+<!--                                <span class="select_box">-->
+<!--                                    <select class="select-region">-->
+<!--                                        <option value="Dealers/?regionid=11">All</option>-->
+<!--                                        <option value="Dealers/?regionid=191">KL &amp; Selangor</option>-->
+<!--                                        <option value="Dealers/?regionid=42">Johor</option>-->
+<!--                                        <option value="Dealers/?regionid=43">Kedah</option>-->
+<!--                                        <option value="Dealers/?regionid=51">Kelantan</option>-->
+<!--                                        <option value="Dealers/?regionid=53">Melaka</option>-->
+<!--                                        <option value="Dealers/?regionid=98">Negeri Sembilan</option>-->
+<!--                                        <option value="Dealers/?regionid=175">Pahang</option>-->
+<!--                                        <option value="Dealers/?regionid=54">Penang</option>-->
+<!--                                        <option value="Dealers/?regionid=55">Perak</option>-->
+<!--                                        <option value="Dealers/?regionid=56">Perlis</option>-->
+<!--                                        <option value="Dealers/?regionid=70">Terengganu</option>-->
+<!--                                        <option value="Dealers/?regionid=58">Sabah</option>-->
+<!--                                        <option value="Dealers/?regionid=59">Sarawak</option>-->
+<!--                                    </select>-->
+<!--                                </span>-->
+<!--                                        <button class="submit-region hvr-rectangle-out" type="submit">Search</button>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                            -->
+<!--                        </div>-->
+<!--                        <div class="col-md-4 col-sm-4 p-lr30 border-shadow-left footer-right">-->
+<!--                             --><?php
+//                                    $arr_footer = array(
+//                                         'post_type'=>'page',
+//                                        'page_id'=> 249
+//                                    );
+//                                    $makita_footer = new WP_Query($arr_footer);
+//                                 ?>
+<!--                                --><?php //while($makita_footer->have_posts()): $makita_footer->the_post(); ?><!-- -->
+<!--                                    --><?php //
+//                                        $tel1 = get_post_meta(get_the_ID(),'footer_tel1',true);
+//                                        $tel2= get_post_meta(get_the_ID(),'footer_tel2',true);
+//                                     ?>
+<!--                                     --><?php //if(!empty($tel1)): ?>
+<!--                                    <h1 class="tel mt-2 mb-2 ">-->
+<!--                                        <img src="--><?php //echo get_template_directory_uri() ?><!--/images/tel_footer.png">-->
+<!--                                        <a href="tel: --><?php //echo  $tel1; ?><!--">--><?php //echo $tel1; ?><!--</a>-->
+<!--                                    </h1>-->
+<!--                                --><?php //endif;
+//                                    if(!empty($tel2)):
+//                                 ?>
+<!--                                    <h1 class="tel mt-2 mb-2 ">-->
+<!--                                        <img src="--><?php //echo get_template_directory_uri() ?><!--/images/tel_footer.png">-->
+<!--                                        <a href="tel: --><?php //echo $tel2; ?><!--">--><?php //echo $tel2; ?><!--</a>-->
+<!--                                    </h1>-->
+<!--                                --><?php //endif; endwhile; ?>
+<!--                                <div class="footer_social mt-2 mb-2">-->
+<!--                                    <div class="social_title">-->
+<!--                                        <h2>--><?php //echo __("Connect with us","education-zone") ?><!--</h2>-->
+<!--                                    </div>-->
+<!--                                    <div class="footer_social_icon g-social">-->
+<!--                                          <div id="social-3453-particle" class="g-content g-particle">-->
+<!--                                <div class="bnm-social">-->
+<!--                                    <div class="g-social">-->
+<!--                                        <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">-->
+<!--                                            <span class="fa fa-facebook-official fa-fw fa-3x"></span>-->
+<!--                                        </a>-->
+<!--                                        <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">-->
+<!--                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            -->
+<!--                            <div class="search-container">-->
+<!---->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
             <div class="footer-bottom" >
-                <div class="container p-t30">
+                <div class="container-fluid px-5 p-t30">
                     <div class="row">
                     <div class="wt-footer-bot-left col-md-2 col-12 text-md-left text-center  d-sm-block d-none">
                         <?php
@@ -127,7 +127,7 @@
                         }
                         ?>
                     </div>
-                    <div class="wt-footer-bot-right col-md-10 col-12  text-md-left ">
+                    <div class="wt-footer-bot-right col-md-8 col-12  text-md-left ">
                         <span>Makita reserves the right to change specification of products without notice. Standard equipment and specifications may differ from country to country. Some products published here may not be sold in your country. The contents of the leaflets can be different from current products since they are original.
                             <br>
                             </span>

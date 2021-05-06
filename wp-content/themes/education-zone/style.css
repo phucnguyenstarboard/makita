@@ -3516,13 +3516,13 @@ ul.owl-carousel {
     }
 }
 
-@media only screen and (min-width: 991.5px) {
+@media only screen and (min-width: 1024.5px) {
     #mobile-header {
         display: none;
     }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1024px) {
     .container {
         width: 750px;
     }

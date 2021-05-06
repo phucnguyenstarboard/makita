@@ -551,101 +551,150 @@ function education_zone_site_header(){
     $menu_label = get_theme_mod('education_zone_top_menu_label', __('Quick Links','education-zone') );
     ?>
     <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
-            <?php 
+            <?php
             if( $phone || $email || has_nav_menu( 'secondary' ) ) { ?>
                 <div class="header-top">
                   <div class="container">
-                    <?php 
+                    <?php
                     if( $email || $phone ){ ?>
                         <div class="top-links">
-                            <?php 
+                            <?php
                             if( $email ){ ?>
                                 <span><i class="fa fa-envelope-o"></i><a href="<?php echo esc_url( 'mailto:'. sanitize_email( $email ) ); ?>"><?php echo esc_html( $email ); ?></a>
                                 </span>
-                            <?php 
-                            } 
+                            <?php
+                            }
                             if( $phone ){ ?>
                                 <span><i class="fa fa-phone"></i><a href="<?php echo esc_url( 'tel:' . preg_replace( '/[^\d+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a>
                                 </span>
-                            <?php 
+                            <?php
                             } ?>
                         </div>
-                    <?php 
+                    <?php
                     }
                     if( has_nav_menu( 'secondary' ) ){ ?>
-                        <nav id="secondary-navigation" class="secondary-nav" role="navigation">     
-                            <a href="javascript:void(0);"><?php echo esc_html( $menu_label ); ?></a>                
+                        <nav id="secondary-navigation" class="secondary-nav" role="navigation">
+                            <a href="javascript:void(0);"><?php echo esc_html( $menu_label ); ?></a>
                             <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
                         </nav><!-- #site-navigation -->
-                    <?php 
+                    <?php
                     } ?>
                 </div>
             </div>
-            <?php 
+            <?php
             } ?>
         
-            <div class="header-m">
-                <div class="container">
-                    <div class="site-branding" itemscope itemtype="https://schema.org/Organization">
-                        <?php 
-                            if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-                                the_custom_logo();
-                            } 
-                        ?>
-                        <?php if ( is_front_page() ) : ?>
-                            <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-                        <?php else : ?>
-                            <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
-                        <?php endif;
-                           $description = get_bloginfo( 'description', 'display' );
-                           if ( $description || is_customize_preview() ) : ?>
-                               <p class="site-description" itemprop="description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                        <?php
-                           endif; 
-                        ?>                    
-                   </div><!-- .site-branding -->
-                    <div class="header_right_wrap">
-                        <div class="header_right">
-                            <div id="social-3453-particle" class="g-content g-particle">
-                                <div class="bnm-social">
-                                    <div class="g-social">
-                                        <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">
-                                            <span class="fa fa-facebook-official fa-fw fa-3x"></span>
-                                        </a>
-                                        <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">
-                                            <span class="fa fa-instagram fa-fw fa-3x"></span>
-                                        </a> -->
-                                        <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">
-                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="header_icon">
-                                <div class="language_flg">
-                                    <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher ('list','flag'); ?>
-                                </div>
-                                <div class="social_icon">
-
-                                </div>
-                            </div>
-                            <div class="form-section">
-                                <div class="example">
-                                    <?php get_search_form(); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+<!--            <div class="header-m">-->
+<!--                <div class="container">-->
+<!--                    <div class="site-branding" itemscope itemtype="https://schema.org/Organization">-->
+<!--                        --><?php //
+//                            if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
+//                                the_custom_logo();
+//                            }
+//                        ?>
+<!--                        --><?php //if ( is_front_page() ) : ?>
+<!--                            <h1 class="site-title" itemprop="name"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home" itemprop="url">--><?php //bloginfo( 'name' ); ?><!--</a></h1>-->
+<!--                        --><?php //else : ?>
+<!--                            <p class="site-title" itemprop="name"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home" itemprop="url">--><?php //bloginfo( 'name' ); ?><!--</a></p>-->
+<!--                        --><?php //endif;
+//                           $description = get_bloginfo( 'description', 'display' );
+//                           if ( $description || is_customize_preview() ) : ?>
+<!--                               <p class="site-description" itemprop="description">--><?php //echo $description; /* WPCS: xss ok. */ ?><!--</p>-->
+<!--                        --><?php
+//                           endif;
+//                        ?><!--                    -->
+<!--                   </div><!-- .site-branding -->
+<!--                    <div class="header_right_wrap">-->
+<!--                        <div class="header_right">-->
+<!--                            <div id="social-3453-particle" class="g-content g-particle">-->
+<!--                                <div class="bnm-social">-->
+<!--                                    <div class="g-social">-->
+<!--                                        <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">-->
+<!--                                            <span class="fa fa-facebook-official fa-fw fa-3x"></span>-->
+<!--                                        </a>-->
+<!--                                        <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">-->
+<!--                                            <span class="fa fa-instagram fa-fw fa-3x"></span>-->
+<!--                                        </a> -->
+<!--                                        <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">-->
+<!--                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="header_icon">-->
+<!--                                <div class="language_flg">-->
+<!--                                    --><?php //if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher ('list','flag'); ?>
+<!--                                </div>-->
+<!--                                <div class="social_icon">-->
+<!---->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-section">-->
+<!--                                <div class="example">-->
+<!--                                    --><?php //get_search_form(); ?>
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
+<!--            </div>-->
             
            <div class="header-bottom">
-                <div class="container">
-                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">                        
-                        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-                    </nav><!-- #site-navigation -->
-                </div>
+               <div class="row">
+                   <div class="col text-center p-0 ">
+                       <div class="nav_logo">
+                           <?php
+                           if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
+                               the_custom_logo();
+                           }
+                           ?>
+                       </div>
+
+                   </div>
+                   <div class="col-7 p-0">
+                       <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                           <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                       </nav><!-- #site-navigation -->
+                   </div>
+                   <div class="col nav_right p-0">
+                       <div class="header_right">
+                           <div id="social-3453-particle" class="g-content g-particle">
+                               <div class="bnm-social">
+                                   <div class="g-social">
+                                       <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">
+                                           <span class="fa fa-facebook-official fa-fw fa-3x"></span>
+                                       </a>
+                                       <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">
+                                           <span class="fa fa-instagram fa-fw fa-3x"></span>
+                                       </a> -->
+                                       <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">
+                                           <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                                       </a>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="header_icon">
+                               <div class="language_flg">
+                                   <?php if ( function_exists ( 'wpm_language_switcher' ) ) wpm_language_switcher ('list','flag'); ?>
+                               </div>
+                               <div class="social_icon">
+
+                               </div>
+                           </div>
+                           <div class="form-section">
+                               <div class="example">
+                                   <?php get_search_form(); ?>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+<!--                <div class="container">-->
+<!--                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">                        -->
+<!--                        --><?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+<!--                    </nav><!-- #site-navigation -->
+<!--                </div>-->
             </div>
 
         </header><!-- #masthead -->

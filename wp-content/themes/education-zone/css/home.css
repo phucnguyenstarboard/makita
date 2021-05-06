@@ -171,10 +171,11 @@ ul.tech-list{
 }
  ul.tech-list li{
     list-style-type: none;
-    width: 20%;
+    width: 23%;
     margin-right: 10px;
     padding: 5px 20px 0 0;
     min-height: 150px;
+     box-sizing: border-box;
 }
 
  ul.tech-list li:last-child.border-shadow-right:after{
@@ -194,7 +195,7 @@ ul.tech-list{
 
  ul.tech-list li a img{
     width: auto;
-    height: 80px;
+    height: 100px;
     padding-top: 10px;
 }
 
@@ -331,8 +332,66 @@ ul.tech-list li a.active:before{
     background: url('../images/banner_2101_03.jpg') repeat-x top left;
 }
 .news_block_middle{
-    background: url('../images/banner_2101_03.jpg') repeat-x  left 36px;
+    /*background: url('../images/banner_2101_03.jpg') repeat-x  left 36px;*/
 }
+.home_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_footer .news_block_middle{
+    flex: 0 0 auto;
+    width: 100%;
+}
+.home_menu  ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0px;
+}
+.home_menu ul li a:hover {
+    color: #ec1f27;
+}
+.home_menu ul li a {
+    color: #686868;
+    line-height: 1.5;
+    font-weight: bold;
+}
+/* new letter*/
+[data-cattype="1802"] .search-container form {
+    position: relative;
+}
+[data-cattype="1802"] .input-news {
+    /*position: absolute;*/
+    
+}
+[data-cattype="1802"] .input-news {
+    border-radius: 0;
+    padding: 5px 10px;
+    width: 80%;
+    float: left;
+}
+[data-cattype="1802"] .submit-news {
+    border: 0;
+    background-color: #00909e;
+    color: #fff;
+    padding: 2.5px 10px;
+    float:left;
+    width: 20%;
+
+}
+[data-cattype="1802"] .submit-news i {
+    font-size: 27px;
+}
+[data-cattype="1802"] .submit-news i:before {
+    margin-right:0px;
+}
+
+[data-cattype="1802"] .submit-news:hover{
+    box-shadow: none;
+    border: 0;
+}
+
+    /*end new letter */
 
 .about_makita{
     background-image: url('../images/banner_05banner_58makita_global_bg_r.jpg');
@@ -593,13 +652,13 @@ ul li, ol li {
     padding-bottom: 0;
     margin-bottom: 0;
     position: relative;
-    font-size: 27px;
+    font-size: 20px;
     /* font-size: 32px; */
     /*text-align: right;*/
     margin-top: 5px;
 }
 [data-cattype="1802"] h1.tel img {
-    width: 35px;
+    width: 25px;
     /*position: absolute;*/
     /*left: 10px;*/
     /*top: 5px;*/
@@ -747,19 +806,24 @@ img {
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary{
     font-family: Roboto;
+    display: flex;
 }
 #masthead  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{
-    padding:17px 15px;
+    padding:15px 0;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 13px;
     font-weight: 700;
     font-family: Roboto;
+    display: block;
+    text-align: center;
 
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item{
     vertical-align: middle;
     border-left: 1px solid #fff;
     -webkit-transition: all, 0.2s;
+    flex: 1 1 0;
+    width: 0;
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:last-child{
     border-right: 1px solid #fff;
@@ -768,13 +832,13 @@ img {
 ,#masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
     /*background:#ED1B24;*/
     background: #008396;
-    font-size: 1.2rem;
+    /*font-size: 15px;*/
     font-weight: 700;
     font-family: Roboto;
 
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
-    font-size: 1.2rem;
+    font-size: 13px;
     font-weight: 700;
     font-family: Roboto;
     background: none;
@@ -783,7 +847,7 @@ img {
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link[aria-expanded = true] {
     /*background:#ED1B24;*/
     background: #008396;
-    font-size: 1.2rem;
+    font-size: 13px;
     font-weight: 700;
     font-family: Roboto;
 }
@@ -819,7 +883,7 @@ img {
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link,
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
-    font-size: 1rem;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     text-shadow: none;
@@ -850,6 +914,36 @@ img {
 #masthead .mega-menu-link{
     border-bottom : 1px solid;
 }
+.nav_logo img{
+    height: 100%;
+    max-width: 70%;
+    max-height: 52px;
+}
+.nav_logo{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+/* search button */
+ .site-header .nav_right .form-section form{
+    height: 25px;
+    width: 105px;
+}
+.site-header  .nav_right  .form-section form input[type="submit"]{
+    background: url("../images/search-icon2.png") no-repeat center center;
+    width:25px;
+}
+ .site-header .nav_right .form-section form input[type="search"] {
+    width:75px;
+    box-sizing: border-box;
+}
+/*end seach button */
+
+
+
+
 
 input[name="awsm_applicant_phone"]{
     border : 1px solid #CCCCCC !important;
@@ -862,13 +956,16 @@ input[name="awsm_applicant_phone"]{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 .form-section{
     margin-right: 20px;
     float: none !important;
 }
 .header_icon{
-    margin-right: 40px;
+    margin-right: 10px;
 }
 .header_icon .language_flg ul li{
     display: inline-block;
@@ -898,7 +995,7 @@ input[name="awsm_applicant_phone"]{
 
 /*social start */
 svg:not(:root).svg-inline--fa {
-    color:#008396;
+    color:#FFFFFF;
     width: 30px;
     margin: 0px 4px;
 }
@@ -908,8 +1005,8 @@ svg:not(:root).svg-inline--fa:hover {
 
 
 .g-content .bnm-social .g-social a .fa {
-    font-size: 2.5em;
-    color:#008396 !important;
+    font-size: 1.5em;
+    color:#FFFFFF !important;
 }
 .g-content .bnm-social .g-social a:hover .fa{
     color:#000000 !important;
@@ -1100,7 +1197,7 @@ svg:not(:root).svg-inline--fa:hover {
 
 /* edn social */
 @media (max-width: 480px){
-    .[data-cattype="1802"] h1.tel{
+    [data-cattype="1802"] h1.tel{
         font-size: 22px;
     }
     .slick-next{

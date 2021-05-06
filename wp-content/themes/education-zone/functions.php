@@ -226,6 +226,7 @@ function education_zone_scripts() {
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/popper.min.js');
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js');
 
+
 }
 add_action( 'wp_enqueue_scripts', 'education_zone_scripts' );
 
@@ -427,6 +428,39 @@ function subsidiary_taxonomy() {
  
 // Hook into the 'init' action
 add_action( 'init', 'subsidiary_taxonomy', 0 );
+
+/*custom category Dealers */
+
+function dealer_taxonomy() {
+ 
+        /* Biến $label chứa các tham số thiết lập tên hiển thị của Taxonomy
+         */
+        $labels = array(
+                'name' => 'Dealer categories',
+                'singular' => 'Dealer category',
+                'menu_name' => 'Dealer categories'
+        );
+ 
+        /* Biến $args khai báo các tham số trong custom taxonomy cần tạo
+         */
+        $args = array(
+                'labels'                     => $labels,
+                'hierarchical'               => true,
+                'public'                     => true,
+                'show_ui'                    => true,
+                'show_admin_column'          => true,
+                'show_in_nav_menus'          => true,
+                'show_tagcloud'              => true,
+        );
+ 
+        /* Hàm register_taxonomy để khởi tạo taxonomy
+         */
+        register_taxonomy('dealer-category', 'dealer', $args);
+ 
+}
+ 
+// Hook into the 'init' action
+add_action( 'init', 'dealer_taxonomy', 0 );
 
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
