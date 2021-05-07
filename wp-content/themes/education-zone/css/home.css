@@ -18,6 +18,26 @@
     url(../fonts/roboto-regular/Roboto-Regular.woff) format('woff'),
     url(../fonts/roboto-regular/Roboto-Regular.woff2) format('woff2');
 }
+@font-face {
+    font-family: 'open-sans';
+    src: url(../fonts/OpenSans/OpenSans.eot);
+    src: url(../fonts/OpenSans/OpenSans.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/OpenSans/OpenSans.otf) format('otf'),
+    url(../fonts/OpenSans/OpenSans.svg#OpenSans) format('svg'),
+    url(../fonts/OpenSans/OpenSans.ttf) format('truetype'),
+    url(../fonts/OpenSans/OpenSans.woff) format('woff'),
+    url(../fonts/OpenSans/OpenSans.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'sansitaone';
+    src: url(../fonts/sansitaone/SansitaOne.eot);
+    src: url(../fonts/sansitaone/SansitaOne.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/sansitaone/SansitaOne.otf) format('otf'),
+    url(../fonts/sansitaone/SansitaOne.svg#SansitaOne) format('svg'),
+    url(../fonts/sansitaone/SansitaOne.ttf) format('truetype'),
+    url(../fonts/sansitaone/SansitaOne.woff) format('woff'),
+    url(../fonts/sansitaone/SansitaOne.woff2) format('woff2');
+}
 
 @font-face {
     font-family: 'robotoBold';
@@ -809,13 +829,17 @@ img {
     display: flex;
 }
 #masthead  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link{
-    padding:15px 0;
+    padding:14px 0;
     text-transform: uppercase;
-    font-size: 13px;
+    /*font-size: 13px;
     font-weight: 700;
-    font-family: Roboto;
+    font-family: Roboto;*/
     display: block;
     text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "open-sans";
 
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item{
@@ -833,23 +857,25 @@ img {
     /*background:#ED1B24;*/
     background: #008396;
     /*font-size: 15px;*/
+    font-size: 15px;
     font-weight: 700;
-    font-family: Roboto;
+    font-family: "open-sans";
 
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    font-family: Roboto;
+    font-family: "open-sans";
     background: none;
     background: #0099b0;
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link[aria-expanded = true] {
     /*background:#ED1B24;*/
     background: #008396;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    font-family: Roboto;
+    font-family: "open-sans";
+    /*font-family: Roboto;*/
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu{
     background: #555;
@@ -917,7 +943,7 @@ img {
 .nav_logo img{
     height: 100%;
     max-width: 70%;
-    max-height: 52px;
+    max-height: 53px;
 }
 .nav_logo{
     /*display: flex;*/
@@ -983,7 +1009,7 @@ input[name="awsm_applicant_phone"]{
 }
 .product_featured{
     padding-top: 60px ;
-    background: url('../images/banner_5601_product_bg_top_01.png') repeat-x top left;
+    /*background: url('../images/banner_5601_product_bg_top_01.png') repeat-x top left;*/
 
 }
 .featured_products{
@@ -1027,7 +1053,8 @@ svg:not(:root).svg-inline--fa:hover {
 }
 .slick-prev{
     background: url("../images/icons8-chevron-left-32.png") no-repeat top center !important;
-    left: -40px !important;
+    /*left: -40px !important;*/
+    left: -30px !important;
     z-index: 99;
 }
 .slick-prev:hover{
@@ -1038,7 +1065,8 @@ svg:not(:root).svg-inline--fa:hover {
 }
 .slick-next{
     background: url("../images/icons8-chevron-right-32.png") no-repeat left center !important;
-    right: -40px !important;
+    /*right: -40px !important;*/
+    right: -30px !important;
     z-index: 99;
 }
 .slick-next:hover{
@@ -1194,7 +1222,34 @@ svg:not(:root).svg-inline--fa:hover {
 .news_img img{
     width: 100%;
 }
-
+.makita-sum h1{
+    font-family: "sansitaone";
+    font-size: 35px;
+    line-height: 25px;
+    color: #ea1d24;
+}
+.featured_products .owl-carousel .owl-nav [class*="owl-"]{
+    top:45%;
+}
+.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
+background: url('../images/next_pr.png') no-repeat;
+    background-size: cover;
+    right: -45px;
+}
+.featured_products  .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
+    width:40px;
+    height: 67px;
+}
+.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-prev{
+    width:40px;
+    height: 67px;
+    left: -45px;
+    background: url("../images/back_pr.png") no-repeat;
+    background-size: cover;
+}
+.p-5rem{
+    padding:0px 5rem;
+}
 /* edn social */
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{

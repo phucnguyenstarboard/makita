@@ -129,7 +129,7 @@ $sidebar_layout = education_zone_sidebar_layout_class();
             </div>
             <script>
                 jQuery(function(){
-                    jQuery('.owl-carousel ').owlCarousel({
+                    jQuery('.owl-carousel').owlCarousel({
                         loop:false,
                         autoplay:false,
                         autoplayTimeout:2000,

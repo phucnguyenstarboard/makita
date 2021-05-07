@@ -22,14 +22,8 @@ $lg = get_locale();
             </h1>
         </div>
         <div class="featured_products">
-            <div class="container">
+            <div class="container-fluid">
                 <?php
-//                    $tax_query[] = array(
-//                        'taxonomy' => 'product_visibility',
-//                        'field'    => 'name',
-//                        'terms'    => 'featured',
-//                        'operator' => 'IN',
-//                    );
                 $args = array(
                     'post_type' => 'product',
                    // 'ignore_sticky_posts' => 1,
@@ -38,32 +32,35 @@ $lg = get_locale();
                 );
                 $feat_pro = new WP_query( $args);
                 ?>
-
-
-
-                <div class="slider responsive_featured">
-                    <?php  while ( $feat_pro->have_posts() ) : $feat_pro->the_post();
-                        $product_code = get_field_object('product_code' , get_the_ID());
-                        ?>
-                    <div class="featured_item">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="item">
-                                <div class="item-media">
-                                    <?php echo get_the_post_thumbnail(get_the_ID(), 'thumnail', array( 'class' =>'thumnail') ); ?>
-                                </div>
-                                <div class="item-content">
-                                    <div class="item-title">
-                                        <h3><?php the_title(); ?></h3>
-                                        <span><?php echo empty($product_code['value']) ?  '' : $product_code['value'];?></span>
-                                        <small></small> <i class="fa fa-caret-right"></i></span>
+                <div class="row p-5rem">
+                    <div class="slider responsive_featured owl-carousel owl-theme">
+                        <?php  while ( $feat_pro->have_posts() ) : $feat_pro->the_post();
+                            $product_code = get_field_object('product_code' , get_the_ID());
+                            ?>
+                            <div class="featured_item">
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="item">
+                                        <div class="item-media">
+                                            <?php echo get_the_post_thumbnail(get_the_ID(), 'thumnail', array( 'class' =>'thumnail') ); ?>
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <h3><?php the_title(); ?></h3>
+                                                <span><?php echo empty($product_code['value']) ?  '' : $product_code['value'];?></span>
+                                                <small></small> <i class="fa fa-caret-right"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                        </a>
+                                </a>
+                            </div>
+                        <?php endwhile; wp_reset_query(); ?>
                     </div>
-                    <?php endwhile; wp_reset_query(); ?>
                 </div>
+
+
+
+
 
             </div>
         </div>
@@ -82,7 +79,7 @@ $lg = get_locale();
                 );
                 $the_query = new WP_Query( $args );
             ?>
-            <div class="container-fluid">
+            <div class="container-fluid px-5">
                 <h1 class="m-tb50">
                     <?php if($lg == 'en_US'){
                         echo "Technologies" ;
@@ -115,6 +112,15 @@ $lg = get_locale();
                 );
                 $makita_home = new WP_Query($arr_mkt);
              ?>
+            <?php
+            $args_news = array(
+                'post_type' => 'news',
+                // 'ignore_sticky_posts' => 1,
+                'meta_key' => '_is_ns_featured_post',
+                'meta_value' => 'yes'
+            );
+            $feat_news = new WP_query( $args_news);
+            ?>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 p-0">
@@ -122,17 +128,37 @@ $lg = get_locale();
                             <div class="middle_bg d-none d-xl-block"></div>
                             <div class="summary">
                                 <div class="makita-sum text-white text-left">
+                                    <h1>
+                                        <?php
+                                        $lang_h = get_locale();
+                                        if($lang_h=='en_US'){
+                                            echo "News";
+                                        }else{
+                                            echo "Tin tức";
+                                        }
+                                        ?>
+                                    </h1>
                                     <?php
-                                        while ($makita_home->have_posts()) : $makita_home->the_post();
+                                        while ($feat_news->have_posts()) : $feat_news->the_post();
                                                
                                      ?>
-                                    <h1><?php echo get_post_meta(get_the_ID(),'title_makita',true); ?></h1>
+<!--                                    <h1>--><?php //echo the_title() ?><!--</h1>-->
                                     <p class="text-justify">
-                                        <?php echo get_post_meta(get_the_ID(),'content_makita',true); ?>
+                                        <?php echo  the_title(); ?>
                                     </p>
-                                    <a class="text-center hvr-rectangle-out" href="<?php echo get_post_meta(get_the_ID(),'makita_global_link',true) ?>" target="_blank">Makita Global</a>
+
                                 <?php endwhile; ?>
                                 <?php wp_reset_postdata(); ?>
+                                    <a class="text-center hvr-rectangle-out" href="/news" target="_blank">
+                                        <?php
+                                        $lang_h = get_locale();
+                                        if($lang_h=='en_US'){
+                                            echo "View More";
+                                        }else{
+                                            echo "Xem thêm";
+                                        }
+                                        ?>
+                                    </a>
                                 </div>
 
                             </div>
@@ -206,38 +232,41 @@ $lg = get_locale();
         </div>
     </div>
 <script type="text/javascript">
-    jQuery('.responsive_featured').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+    jQuery(function(){
+        jQuery('.responsive_featured ').owlCarousel({
+            loop:false,
+            autoplay:false,
+            autoplayTimeout:2000,
+            margin:0,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            items:4,
+            dots: false,
+            //animateOut:'fadeOut',
+                responsive : {
+                    // breakpoint from 0 up
+                    0:{
+                        items:1
+                    },
+                        // breakpoint from 480 up
+                        480 : {
+                            items:2,
+                    },
+                    // breakpoint from 768 up
+                    600 : {
+                            items:2
+                    },
+                    1024 : {
+                        items:3
+                    },
+                    1025 : {
+                        items:4
+                    }
             }
-        ]
+
+        });
     });
+    
 
     jQuery(".border-shadow-right").click(function () {
         jQuery(".border-shadow-right a").removeClass("active");
