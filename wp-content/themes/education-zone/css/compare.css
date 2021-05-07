@@ -1,52 +1,96 @@
 .page-header .page-title{
     display: none;
 }
-
-
-.compare-product .uk-button {
-    margin: 0;
-    border: none;
-    font: inherit;
-    color: #444;
-    box-sizing: border-box;
-    padding: 0 12px;
-    background: #f5f5f5;
-    line-height: 28px;
-    min-height: 30px;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 1px solid rgba(0,0,0,.06);
-    border-radius: 4px;
+body{
+  font-family:Roboto;
+  font-size:13px;
+  color:#666;
+  font-weight:300;
+  padding:10px;
 }
 
-.compare-product .uk-button:not(:disabled), .uk-form input[type=checkbox]:not(:disabled), .uk-form input[type=radio]:not(:disabled) {
-    cursor: pointer;
+.comparison-table{
+  border-collapse:collapse;
 }
 
-.compare-product .uk-button {
-    background: #bec1c3!important;
-    border: 1px solid rgba(0,0,0,.1)!important;
-    border-radius: 0!important;
-    text-shadow: none!important;
+.comparison-table .width25{
+    width: 25%;
 }
 
-.compare-product .uk-button-small {
-    min-height: 25px;
-    padding: 0 10px;
-    line-height: 40px;
-    font-size: 15px;
-    
+.comparison-table .width75{
+    width: 75%;
 }
 
-.compare-product .uk-button-danger, .uk-button-primary, .uk-button-success {
-    box-shadow: inset 0 0 5px rgb(0 0 0 / 5%);
-    text-shadow: 0 -1px 0 rgb(0 0 0 / 10%);
+.comparison-table .width-col-2{
+    width: calc(75%/2); 
 }
 
-.compare-product .uk-button-primary {
-    background-color: #008396!important;
-    color: #fff!important;
-    transition: all .2s ease;
+.comparison-table .width-col-3{
+    width: calc(75%/3); 
+}
+
+.comparison-table .width-col-4{
+    width: calc(75%/4); 
+}
+
+.comparison-table .empty-cell{
+  border:none;
+  background:none;
+}
+.comparison-table td,
+.comparison-table th{
+  padding:10px 15px;
+  border:1px solid #ccc;
+  /*min-width:130px;
+  max-width:300px;*/
+  text-align:center;
+}
+
+.comparison-table .product-code{
+    font-weight: 700;
+}
+
+.comparison-table th img{
+    /*max-width: 174px;*/
+}
+.comparison-table .comparison-table-section-header td{
+  font-weight:500;
+  font-size:12px;
+  padding-top:20px;
+  color:#222;
+  text-transform:uppercase;
+  background:#f9f9f9;
+  letter-spacing:1px;
+}
+
+
+.comparison-table th{
+  background:#fff;
+  font-weight:500;
+  text-transform:uppercase;
+  color:#666;
+  padding-top:20px;
+  padding-bottom:20px;
+  letter-spacing:2px;
+  font-size:14px;
+}
+.comparison-table td:first-child{
+  text-align:left;
+  font-weight: 700;
+}
+.comparison-table .fa-check{
+  color:#7ab55c;
+}
+.comparison-table .fa-close{
+  color:#b55c68;
+}
+
+.comparison-table .odd td{
+   background:#f8f9fa;
+}
+
+.comparison-table .even td{
+  background:#fff;
 }
 
 

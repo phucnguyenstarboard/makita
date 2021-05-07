@@ -78,7 +78,7 @@ if (empty($categories)){
 				<?php
 				    if ( $products ) {
                         foreach ( $products as $post ) :
-                        	$post_id = get_the_ID();                        	
+                        	$post_id = get_the_ID();
                         	$product_code = get_field_object('product_code' , $post_id);
 				?>
 				<div class="col-md-3 col-sm-6 col-xs-12">
@@ -146,19 +146,20 @@ if (empty($categories)){
 	    ;
 	    inner.fadeOut();
 	   
-	    console.log(data);
-	                $('.zoocompare-element').each(function(ii, elx){
-	            var item_id = jQuery(elx).data('item-id');
-	            if(item_id == icon.data('item-id')){
-	                jQuery(elx).find('.zoocompareCheckbox').prop('checked', false);
-	            }
-	        });
-	            $.ajax({
+	    //console.log(data);
+        $('.zoocompare-element').each(function(ii, elx){
+            var item_id = jQuery(elx).data('item-id');
+            if(item_id == icon.data('item-id')){
+                jQuery(elx).find('.zoocompareCheckbox').prop('checked', false);
+            }
+        });
+
+	    $.ajax({
 	        url : ''
 	    }).done(function(respone){
 	        inner.remove();
 	    })
-	     // inner.remove();
+	    
 	}
 	
 	
