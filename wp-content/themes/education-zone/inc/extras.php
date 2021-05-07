@@ -603,7 +603,7 @@ function education_zone_site_header(){
 <!--                        --><?php
 //                           endif;
 //                        ?><!--                    -->
-<!--                   </div><!-- .site-branding -->
+<!--                   </div> .site-branding -->
 <!--                    <div class="header_right_wrap">-->
 <!--                        <div class="header_right">-->
 <!--                            <div id="social-3453-particle" class="g-content g-particle">-->
@@ -612,7 +612,7 @@ function education_zone_site_header(){
 <!--                                        <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">-->
 <!--                                            <span class="fa fa-facebook-official fa-fw fa-3x"></span>-->
 <!--                                        </a>-->
-<!--                                        <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">-->
+<!--                                         <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">-->
 <!--                                            <span class="fa fa-instagram fa-fw fa-3x"></span>-->
 <!--                                        </a> -->
 <!--                                        <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">-->
@@ -641,7 +641,8 @@ function education_zone_site_header(){
 <!--            </div>-->
             
            <div class="header-bottom">
-               <div class="row">
+                <div class="container-fluid"> 
+                    <div class="row">
                    <div class="col text-center p-0 ">
                        <div class="nav_logo">
                            <?php
@@ -689,11 +690,12 @@ function education_zone_site_header(){
                            </div>
                        </div>
                    </div>
-               </div>
+                </div>
+           </div>
 <!--                <div class="container">-->
 <!--                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">                        -->
 <!--                        --><?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-<!--                    </nav><!-- #site-navigation -->
+<!--                    </nav> #site-navigation -->
 <!--                </div>-->
             </div>
 

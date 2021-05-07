@@ -837,7 +837,7 @@ img {
     font-family: Roboto;*/
     display: block;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     color: #ffffff;
     font-weight: 700;
     font-family: "open-sans";
@@ -858,13 +858,13 @@ img {
     /*background:#ED1B24;*/
     background: #008396;
     /*font-size: 15px;*/
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     font-family: "open-sans";
 
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     font-family: "open-sans";
     background: none;
@@ -873,7 +873,7 @@ img {
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link[aria-expanded = true] {
     /*background:#ED1B24;*/
     background: #008396;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     font-family: "open-sans";
     /*font-family: Roboto;*/
@@ -944,7 +944,7 @@ img {
 .nav_logo img{
     height: 100%;
     max-width: 70%;
-    max-height: 53px;
+    max-height: 51.62px;
 }
 .nav_logo{
     /*display: flex;*/
@@ -988,17 +988,16 @@ input[name="awsm_applicant_phone"]{
     box-sizing: border-box;
 }
 .form-section{
-    margin-right: 20px;
     float: none !important;
 }
 .header_icon{
-    margin-right: 10px;
+    margin-right: 3px;
 }
 .header_icon .language_flg ul li{
     display: inline-block;
 }
 .header_icon .switcher-list{
-    margin-left: 20px;
+    margin-left: 0px;
 }
 .product_featured h1.m-t50 {
     color: #000;
@@ -1252,6 +1251,141 @@ background: url('../images/next_pr.png') no-repeat;
     padding:0px 5rem;
 }
 /* edn social */
+#btn-vibrate {
+    animation: vibrate 2s linear 0s infinite;
+    -moz-animation: vibrate 2s linear 0s infinite;
+    -webkit-animation: vibrate 2s linear 0s infinite;
+    -o-animation: vibrate 2s linear 0s infinite;
+}
+
+@keyframes vibrate {
+    0% {
+        top: 0px;
+    }
+    25% {
+        top: -3px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: 3px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+/* Firefox */
+@-moz-keyframes vibrate
+
+ {
+    0% {
+        top: 0px;
+    }
+    25% {
+        top: -3px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: 3px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+/* Safari and Chrome */
+@-webkit-keyframes vibrate
+
+ {
+    0% {
+        top: 0px;
+    }
+    25% {
+        top: -3px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: 3px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+/* Opera */
+@-o-keyframes vibrate
+
+ {
+    0% {
+        top: 0px;
+    }
+    25% {
+        top: -3px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: 3px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+button.scroltop {
+    right: 28px;
+    bottom: 100px;
+    background: #fff;
+    border-color: #0190A0;
+    color: #0190A0;
+    height: 55px;
+    width: 55px;
+    border: 3px solid;
+    position: fixed;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    z-index: 999;
+    border-radius: 50%;
+}
+.iconmoon-house:before {
+    content: "\e909";
+    background: url('../images/bt.png') no-repeat center center;
+}
+button.scroltop span {
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    position: relative;
+}
+.branch_bg .tel a.web_url{
+    transition: all 0.3s ease-in-out;
+    color: #0190A0;
+}
+.branch_bg .tel a.web_url:hover{
+    color:#ff0000;
+}
+.branch_img  .owl-carousel .owl-item .dealer_img img{height: 244px;}
+.branch_bg {
+    position: relative;
+}
+.tag-mcp{
+    position: absolute;
+    bottom: 5px;
+    right:5px;
+}
+.dealer_list .branch_map img{
+    max-height: 100%;
+}
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{
         font-size: 22px;
@@ -1361,6 +1495,7 @@ background: url('../images/next_pr.png') no-repeat;
     [data-cattype="1802"] .col-md-4.col-sm-4.p-lr30.border-shadow-left.text-right {
         width: 37%;
     }
+    .tag-mcp img{width:50px;}
 }
 @media (max-width: 767px){
     [data-cattype="1802"] .container .p-lr30 {
