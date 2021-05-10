@@ -194,6 +194,9 @@ function education_zone_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
 	wp_enqueue_style( 'home', get_template_directory_uri().'/css/home.css' );
+	wp_enqueue_style( 'flaticon', get_template_directory_uri().'/css/flaticon.min.css' );
+	wp_enqueue_style( 'flaticon', get_template_directory_uri().'/css/animate.min.css' );
+
 	
 	if( is_archive() ){
 	    wp_enqueue_style( 'category', get_template_directory_uri().'/css/category.css' );
@@ -202,6 +205,7 @@ function education_zone_scripts() {
     if ( is_page_template( 'templates/template-compare.php' ) ) {
     	wp_enqueue_style( 'compare', get_template_directory_uri().'/css/compare.css' );
     }
+	wp_enqueue_style( 'magnific', get_template_directory_uri().'/css/magnific-popup.css' );
 
     if ( is_page_template( 'templates/template-catalog.php' ) ) {
     	wp_enqueue_style( 'catalog', get_template_directory_uri().'/css/catalog.css' );
@@ -229,7 +233,11 @@ function education_zone_scripts() {
 	}
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/popper.min.js');
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js');
-
+	wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js');
+	wp_enqueue_script( 'magnific', get_template_directory_uri() . '/js/jquery.magnific-popup.js');
+	if ( is_page_template( 'dealer.php' ) ) {
+		wp_enqueue_script('dealer', get_template_directory_uri() . '/js/dealer.js');
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'education_zone_scripts' );
@@ -440,9 +448,10 @@ function dealer_taxonomy() {
         /* Biến $label chứa các tham số thiết lập tên hiển thị của Taxonomy
          */
         $labels = array(
-                'name' => 'Dealer categories',
-                'singular' => 'Dealer category',
-                'menu_name' => 'Dealer categories'
+                'name' => 'Dealer Region',
+                'singular' => 'Dealer Region',
+                'menu_name' => 'Dealer Region',
+                
         );
  
         /* Biến $args khai báo các tham số trong custom taxonomy cần tạo
@@ -459,12 +468,37 @@ function dealer_taxonomy() {
  
         /* Hàm register_taxonomy để khởi tạo taxonomy
          */
-        register_taxonomy('dealer-category', 'dealer', $args);
+        register_taxonomy('dealer-region-category', 'dealer', $args);
+
+
+        /* Biến $label chứa các tham số thiết lập tên hiển thị của Taxonomy
+         */
+        $labels_type = array(
+                'name' => 'Dealer type',
+                'singular' => 'Dealer type',
+                'menu_name' => 'Dealer type'
+        );
+ 
+        /* Biến $args khai báo các tham số trong custom taxonomy cần tạo
+         */
+        $args_type = array(
+                'labels'                     => $labels_type,
+                'hierarchical'               => true,
+                'public'                     => true,
+                'show_ui'                    => true,
+                'show_admin_column'          => true,
+                'show_in_nav_menus'          => true,
+                'show_tagcloud'              => true,
+        );
+ 
+        /* Hàm register_taxonomy để khởi tạo taxonomy
+         */
+        register_taxonomy('dealer-type-category', 'dealer', $args_type);
  
 }
  
 // Hook into the 'init' action
-add_action( 'init', 'dealer_taxonomy', 0 );
+add_action( 'init', 'dealer_taxonomy' );
 
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
@@ -474,3 +508,59 @@ function woocommerce_support() {
 
 //add custom thumnail size
 add_image_size('news-size',300,200, array('center','center'));
+
+//get distance between 2 location
+
+function distance($lat1, $lon1, $lat2, $lon2) {
+
+	$pi80 = M_PI / 180;
+	$lat1 *= $pi80;
+	$lon1 *= $pi80;
+	$lat2 *= $pi80;
+	$lon2 *= $pi80;
+
+	$r = 6371 ;//6372.797; // mean radius of Earth in km
+	$dlat = $lat2 - $lat1;
+	$dlon = $lon2 - $lon1;
+	$a = sin($dlat / 2) * sin($dlat / 2) + cos($lat1) * cos($lat2) * sin($dlon / 2) * sin($dlon / 2);
+	$c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+	$km = $r * $c;
+
+	//echo '<br/>'.$km;
+	return round($km);
+}
+
+// Ham tao phan trang
+function ct_pagination($pages = '', $range = 2)
+{
+	$showitems = ($range * 2)+1;
+	global $paged;
+	if(empty($paged)) $paged = 1;
+	if($pages == '')
+	{
+		global $wp_query;
+		$pages = $wp_query->max_num_pages;
+		if(!$pages)
+		{
+			$pages = 1;
+		}
+	}
+	if(1 != $pages)
+	{
+		echo "<nav aria-label='Page navigation'>  <ul class='pagination m-0 justify-content-center '>";
+		if($paged > 2 && $paged > $range+1 && $showitems < $pages)
+			echo "<li class='page-item'><a class='page-link' href='".get_pagenum_link(1)."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
+		if($paged > 1 && $showitems < $pages)
+			echo "<li class='page-item'><a class='page-link' href='".get_pagenum_link($paged - 1)."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
+		for ($i=1; $i <= $pages; $i++)
+		{
+			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+			{
+				echo ($paged == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".get_pagenum_link($i)."' class=\"page-link\">".$i."</a></li>";
+			}
+		}
+		if ($paged < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link($paged + 1)."\"><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
+		if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
+		echo "</ul></nav>\n";
+	}
+}

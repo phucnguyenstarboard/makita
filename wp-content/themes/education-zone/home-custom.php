@@ -31,6 +31,7 @@ $lg = get_locale();
                     'meta_value' => 'yes'
                 );
                 $feat_pro = new WP_query( $args);
+
                 ?>
                 <div class="row p-5rem">
                     <div class="slider responsive_featured owl-carousel owl-theme">
@@ -55,6 +56,7 @@ $lg = get_locale();
                                 </a>
                             </div>
                         <?php endwhile; wp_reset_query(); ?>
+
                     </div>
                 </div>
 

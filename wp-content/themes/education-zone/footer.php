@@ -192,7 +192,37 @@
     <div class="footer-overlay"></div>
 </div><!-- done for accessibility reasons -->
 </div><!-- #page -->
+<button class="scroltop" id="bttop" style="display: none;"><span class=" iconmoon-house relative" id="btn-vibrate"></span>Top</button>
+<script type='text/javascript'>
+        $bt=jQuery.noConflict();
+        $bt(document).ready(function () {
+            $bt(window).scroll(function(){
+                var wt=$bt(this).scrollTop();
+                if($bt(this).scrollTop() >53){
+                    $bt(".header-bottom").addClass('fixed-top');
+                }else{
+                    $bt(".header-bottom").removeClass('fixed-top');
 
+                }
+                if((wt+$bt(window).height()) >= ($bt('.site-footer').offset().top - 100) ){
+                    $bt('#bttop').fadeIn();
+                }else{
+                    $bt('#bttop').fadeOut();
+
+                }
+        });
+
+            $bt('#bttop').click(function(){
+                $bt('body,html').animate({scrollTop:0},500,'swing');
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 <?php wp_footer(); ?>
 
 </body>
