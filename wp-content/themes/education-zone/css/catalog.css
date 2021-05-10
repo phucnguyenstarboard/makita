@@ -18,3 +18,7 @@
 .catalog .card-footer a:hover{
 	color: #008396;
 }
+
+.catalog .item-catalog:nth-child(n+4) {
+   margin-top: 0.75rem; 
+}
