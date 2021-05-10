@@ -19,6 +19,10 @@
 	color: #008396;
 }
 
-.catalog .item-catalog:nth-child(n+4) {
-   margin-top: 0.75rem; 
+.catalog .item-catalog:nth-child(n+5) {
+   margin-top: 1.5rem; 
+}
+
+.catalog .card:hover{
+	border-color: #008396;
 }
