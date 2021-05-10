@@ -6,7 +6,8 @@
     "accessory":{},
     "subsidiary":{},
     "product": {},
-    "news": {}
+    "news": {},
+    "catalog": {}
 
   },
   "post_fields": {
