@@ -51,7 +51,7 @@ $sidebar_layout = education_zone_sidebar_layout_class();
     }
 
     $args['tax_query'] = $tax_query;
-    $args['posts_per_page'] = 1;
+    $args['posts_per_page'] = 10;
     $args['paged'] = $paged;
 
 
@@ -116,7 +116,7 @@ $sidebar_layout = education_zone_sidebar_layout_class();
                                     <?php }else{ ?>
                                     <div class="col-lg-9 col-sm-6 col-12 branch_bg p-3 position-relative pb-5 pb-lg-0">
                                     <?php } ?>    
-                                        <h2><?php the_title() ?><small><?php echo get_post_meta( get_the_ID(), 'dealer_code',true );  ?></small></h2>
+                                        <h2><?php the_title() ?><small> (<?php echo get_post_meta( get_the_ID(), 'dealer_code',true );  ?>) </small></h2>
                                         <div class="branch_ct mb-3"><?php the_content() ?></div>
                                         <div class="phone_fax">
                                            <?php
