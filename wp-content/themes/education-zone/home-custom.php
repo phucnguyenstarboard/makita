@@ -10,6 +10,34 @@ $lg = get_locale();
         <?php
         echo do_shortcode('[smartslider3 slider="2"]');
         ?>
+        <div class="product_popular container-fluid">
+            <?php
+            $args_popular = array(
+                'post_type' => 'product_popular',
+                'post_status'     => 'publish',
+                'post_per_page' => 3,
+            );
+            $popular_pr = new WP_query( $args_popular);
+           // var_dump($popular_pr->post_count);
+            ?>
+            <div class="row">
+                <?php while ($popular_pr->have_posts()): $popular_pr->the_post(); ?>
+                    <div class="col-12 col-sm-4 p-0 popular_wrap">
+                        <div class="popular_box position-relative">
+                            <a href="<?php echo get_post_meta(get_the_ID(),'attached_link',true) ?>">
+                                <?php the_post_thumbnail('full'); ?>
+                            </a>
+                            <div class="popular_info">
+                                <h3 class="popular_title m-0"><?php the_title(); ?></h3>
+                                <div class="popular_expert"><?php the_excerpt(); ?></div>
+                                <div  class="p_more"><a href="<?php echo get_post_meta(get_the_ID(),'attached_link',true) ?>"><?php echo __('View detail','education-zone') ?></a></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+        </div>
+
         <div class="product_featured">
             <h1 class="m-t50 ">
                 <?php if($lg == 'en_US'){
@@ -24,13 +52,13 @@ $lg = get_locale();
         <div class="featured_products">
             <div class="container-fluid">
                 <?php
-                $args = array(
+                $args_pr = array(
                     'post_type' => 'product',
                    // 'ignore_sticky_posts' => 1,
                     'meta_key' => '_is_ns_featured_post',
                     'meta_value' => 'yes'
                 );
-                $feat_pro = new WP_query( $args);
+                $feat_pro = new WP_query( $args_pr);
 
                 ?>
                 <div class="row p-5rem">
@@ -68,42 +96,43 @@ $lg = get_locale();
         </div>
         <div class="technology">
             <?php
-                $args = array(
-                    'post_type'       => 'technology',
+                $args_acc = array(
+                    'post_type'       => 'accessory',
                     'post_status'     => 'publish',
-                    'posts_per_page' => '4',
-                    'meta_query' => array(
-                        array(
-                            'key'       => 'is_featured',
-                            'value'     => '1',
-                        )
-                    )
+                    'meta_key' => '_is_ns_featured_post',
+                    'meta_value' => 'yes'
                 );
-                $the_query = new WP_Query( $args );
+                $the_query_acc = new WP_Query( $args_acc );
             ?>
-            <div class="container-fluid px-5">
-                <h1 class="m-tb50">
+            <div class="container-fluid featured_accessories">
+                <h1 class="m-t50 ">
                     <?php if($lg == 'en_US'){
-                        echo "Technologies" ;
+                        echo "New Accessories" ;
                     }else{
-                        echo "Công nghệ" ;
+                        echo "Phụ kiện mới" ;
                     }
 
                     ?>
                 </h1>
-                <ul class="grid tech-list trans-all">
-                    <?php if( $the_query->have_posts() ):
-                        while($the_query->have_posts()) : $the_query->the_post();
-                    ?>
-                            <li class="border-shadow-right">
-                                <a href="<?php echo get_permalink() ?>" target="_blank" >
-                                    <?php the_post_thumbnail() ?>
-                                    <h3><?php the_title() ?></h3>
-                                </a>
-                            </li>
-                    <?php endwhile; endif; ?>
-                    <?php wp_reset_postdata(); ?>
-                </ul>
+                <div class="row p-5rem">
+                    <div class="technology_wrap accessory_featured owl-carousel owl-theme">
+                        <?php if( $the_query_acc->have_posts() ):
+                            while($the_query_acc->have_posts()) : $the_query_acc->the_post();
+                                ?>
+                                <div class="pb-3 text-center text-md-left">
+                                    <a href="<?php echo get_permalink() ?>" target="_blank" >
+                                        <div class="tech_item">
+                                            <div class="shadow-divider">
+                                                <?php the_post_thumbnail('thumb',array(300,300)) ?>
+                                            </div>
+                                            <h4 class="text-md-start text-center"><?php the_title() ?></h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php endwhile; endif; ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="news_wrap">
@@ -117,9 +146,7 @@ $lg = get_locale();
             <?php
             $args_news = array(
                 'post_type' => 'news',
-                // 'ignore_sticky_posts' => 1,
-                'meta_key' => '_is_ns_featured_post',
-                'meta_value' => 'yes'
+                'post_status' => 'publish'
             );
             $feat_news = new WP_query( $args_news);
             ?>
@@ -127,42 +154,31 @@ $lg = get_locale();
                 <div class="row">
                     <div class="col-md-6 col-sm-12 p-0">
                         <div class="about_makita mh_350">
-                            <div class="middle_bg d-none d-xl-block"></div>
-                            <div class="summary">
-                                <div class="makita-sum text-white text-left">
-                                    <h1>
-                                        <?php
-                                        $lang_h = get_locale();
-                                        if($lang_h=='en_US'){
-                                            echo "News";
-                                        }else{
-                                            echo "Tin tức";
-                                        }
-                                        ?>
-                                    </h1>
-                                    <?php
-                                        while ($feat_news->have_posts()) : $feat_news->the_post();
-                                               
-                                     ?>
-<!--                                    <h1>--><?php //echo the_title() ?><!--</h1>-->
-                                    <p class="text-justify">
-                                        <?php echo  the_title(); ?>
-                                    </p>
+                            <div class="news_home py-3  px-3 px-sm-5">
+                                <h2 class="news_lable_h m-0">
+                                    <?php if($lg == 'en_US'){
+                                        echo "News" ;
+                                    }else{
+                                        echo "Tin tức" ;
+                                    }
 
-                                <?php endwhile; ?>
-                                <?php wp_reset_postdata(); ?>
-                                    <a class="text-center hvr-rectangle-out" href="/news" target="_blank">
-                                        <?php
-                                        $lang_h = get_locale();
-                                        if($lang_h=='en_US'){
-                                            echo "View More";
-                                        }else{
-                                            echo "Xem thêm";
-                                        }
-                                        ?>
-                                    </a>
+                                    ?>
+                                </h2>
+                                <div class="news_list_h">
+                                    <?php while ($feat_news->have_posts()): $feat_news->the_post(); ?>
+                                        <div class="row mb-2 ">
+                                            <div class="col-4">
+                                               <div class="news_img_h">
+                                                   <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('news-size') ?></a>
+                                               </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="news_date_h m-0"><?php the_date('d.F.Y'); ?></p>
+                                                <h3 class="news_title_h m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                            </div>
+                                        </div>
+                                    <?php endwhile;wp_reset_query(); ?>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -268,7 +284,41 @@ $lg = get_locale();
 
         });
     });
-    
+
+    jQuery(function(){
+        jQuery('.accessory_featured ').owlCarousel({
+            loop:false,
+            autoplay:false,
+            autoplayTimeout:2000,
+            margin:30,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            items:4,
+            dots: false,
+            //animateOut:'fadeOut',
+            responsive : {
+                // breakpoint from 0 up
+                0:{
+                    items:1
+                },
+                // breakpoint from 480 up
+                480 : {
+                    items:2,
+                },
+                // breakpoint from 768 up
+                600 : {
+                    items:2
+                },
+                1024 : {
+                    items:3
+                },
+                1025 : {
+                    items:4
+                }
+            }
+
+        });
+    });
 
     jQuery(".border-shadow-right").click(function () {
         jQuery(".border-shadow-right a").removeClass("active");

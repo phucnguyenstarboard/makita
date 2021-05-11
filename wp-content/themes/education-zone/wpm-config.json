@@ -7,7 +7,9 @@
     "subsidiary":{},
     "product": {},
     "news": {},
-    "catalog": {}
+    "catalog": {},
+    "dealer": {},
+    "product_popular":{}
 
   },
   "post_fields": {
@@ -26,6 +28,9 @@
     "footer_tel2":{}
   },  
   "taxonomies": {
-    "subsidiary-category": {}
+    "subsidiary-category": {},
+    "dealer-region-category":{},
+    "dealer-type-category":{},
+    "pods":{}
   }
 }

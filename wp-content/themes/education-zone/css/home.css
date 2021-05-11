@@ -349,7 +349,7 @@ ul.tech-list li a.active:before{
     min-height:350px;
 }
 .news_block{
-    background: url('../images/banner_2101_03.jpg') repeat-x top left;
+    background: url('../images/footer_bg.png') repeat-x top left;
 }
 .news_block_middle{
     /*background: url('../images/banner_2101_03.jpg') repeat-x  left 36px;*/
@@ -414,13 +414,10 @@ ul.tech-list li a.active:before{
     /*end new letter */
 
 .about_makita{
-    background-image: url('../images/banner_05banner_58makita_global_bg_r.jpg');
+    background: url('../images/news_bg_03.png') no-repeat center center;
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 0;
     margin: 0;
-    background-position: center;
 }
 .middle_bg{
     background-image: url('../images/makita_global_bg_cordless.svg');
@@ -532,6 +529,82 @@ ul.tech-list li a.active:before{
     transition-duration: 0.3s;
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
+}
+ .news_home{
+     /*padding:15px 20px;*/
+ }
+
+.news_wrap{
+    border: 1px solid #707070;
+}
+.news_list_h{
+    margin:15px 0px;
+}
+.news_date_h{
+    font-size: 16px;
+    color: #00909e;
+    font-weight: 700;
+}
+.news_lable_h{
+    font-size: 30px;
+    color: #ea1d24;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.news_title_h{
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.news_title_h a{
+    font-size: 16px;
+    color: #474747;
+    font-weight: 700;
+}
+.news_title_h a:hover{
+    color: #ec1f27;
+}
+.news_img_h{
+    overflow: hidden;
+}
+.news_img_h img{
+    -webkit-transition: all 1.2s ease 0s;
+    -moz-transition: all 1.2s ease 0s;
+    -ms-transition: all 1.2s ease 0s;
+    -o-transition: all 1.2s ease 0s;
+    transition: all 1.2s ease 0s;
+}
+.news_img_h img:hover{
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.news_list_h{
+    height: 335px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+     /* width */
+ .news_list_h::-webkit-scrollbar {
+     width: 10px;
+ }
+
+/*!* Track *!*/
+.news_list_h::-webkit-scrollbar-track {
+    background: #e4e4e4;
+}
+
+/*!* Handle *!*/
+.news_list_h::-webkit-scrollbar-thumb {
+    background: #7f7f7f;
+}
+
+/*!* Handle on hover *!*/
+.news_list_h::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 
@@ -846,8 +919,8 @@ img {
     vertical-align: middle;
     border-left: 1px solid #fff;
     -webkit-transition: all, 0.2s;
-    flex: 1 1 0;
-    width: 0;
+    flex: 1 1 0px;
+
 }
 #masthead #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:last-child{
     border-right: 1px solid #fff;
@@ -1000,24 +1073,29 @@ input[name="awsm_applicant_phone"]{
 }
 .product_featured h1.m-t50 {
     color: #000;
-    margin-bottom: 24px;
+    /*margin-bottom: 24px;*/
     text-align: center;
+    margin:40px 0px;
 }
+
 .product_featured .m-t50 {
     margin-top: 0px;
 }
 .product_featured{
-    padding-top: 60px ;
+    /*padding-top: 60px ;*/
     /*background: url('../images/banner_5601_product_bg_top_01.png') repeat-x top left;*/
 
 }
 .featured_products{
-    background: url('../images/banner_5601_product_bg_bottom.png') repeat-x bottom right;
+    background: url('../images/featured_bg.png') repeat-x bottom right;
 }
 .m-tb50{
     margin:50px 0px;
 }
-
+.accessory_featured .tech_item .shadow-divider img{
+    height: auto;
+    width: 70%;
+}
 /*social start */
 svg:not(:root).svg-inline--fa {
     color:#FFFFFF;
@@ -1227,19 +1305,19 @@ svg:not(:root).svg-inline--fa:hover {
     line-height: 25px;
     color: #ea1d24;
 }
-.featured_products .owl-carousel .owl-nav [class*="owl-"]{
+.featured_products .owl-carousel .owl-nav [class*="owl-"],.featured_accessories  .owl-carousel .owl-nav [class*="owl-"]{
     top:45%;
 }
-.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
+.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-next,.featured_accessories  .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
 background: url('../images/next_pr.png') no-repeat;
     background-size: cover;
     right: -45px;
 }
-.featured_products  .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
+.featured_products  .owl-carousel .owl-stage-outer+.owl-nav .owl-next,.featured_accessories   .owl-carousel .owl-stage-outer+.owl-nav .owl-next{
     width:40px;
     height: 67px;
 }
-.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-prev{
+.featured_products .owl-carousel .owl-stage-outer+.owl-nav .owl-prev,.featured_accessories  .owl-carousel .owl-stage-outer+.owl-nav .owl-prev{
     width:40px;
     height: 67px;
     left: -45px;
@@ -1248,6 +1326,14 @@ background: url('../images/next_pr.png') no-repeat;
 }
 .p-5rem{
     padding:0px 5rem;
+}
+.featured_accessories .technology_wrap .tech_item h4{
+    padding:6px 15px;
+}
+.featured_accessories h1.m-t50{
+    color: #000;
+    text-align: center;
+    margin: 40px 0px;
 }
 /* edn social */
 #btn-vibrate {
@@ -1359,6 +1445,7 @@ button.scroltop {
 .iconmoon-house:before {
     content: "\e909";
     background: url('../images/bt.png') no-repeat center center;
+    display: block;
 }
 button.scroltop span {
     display: block;
@@ -1475,6 +1562,58 @@ button.scroltop span {
     color: #00909e;
     margin-bottom: 15px;
     margin-top: 5px;
+
+}
+.popular_wrap{
+    padding-right: 3px !important;
+    padding-top: 1px !important;
+}
+.popular_wrap:last-child{
+    padding-right:0px !important;
+    padding-top:1px !important;
+}
+.popular_info{
+    background: url('../images/shadow_bg.png') repeat left top;
+    padding:15px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100% ;
+}
+.popular_info h3.popular_title{
+    font-size: 30px;
+    color: #ffffff;
+    /*text-transform: uppercase;*/
+    font-weight: normal;
+}
+.popular_info .popular_expert{
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: 1.2;
+}
+.popular_info .p_more a{
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: normal;
+    padding:2px 20px ;
+    border:1px solid #ffffff;
+    text-transform: uppercase;
+}
+.popular_info .p_more a:hover{
+    color: #EC1F27;
+    border:1px solid #EC1F27;
+    cursor: pointer;
+}
+.popular_box{
+    overflow: hidden;
+}
+.popular_box img{
+    transition: all 1.2s ease 0s;
+}
+.popular_box img:hover{
+    transform: scale(1.3);
 }
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{
