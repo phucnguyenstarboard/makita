@@ -507,7 +507,7 @@ function woocommerce_support() {
 }
 
 //add custom thumnail size
-add_image_size('news-size',300,200, array('center','center'));
+add_image_size('news-size',300,120, array('center','center'));
 
 //get distance between 2 location
 
