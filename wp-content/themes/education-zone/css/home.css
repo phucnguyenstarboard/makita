@@ -535,7 +535,7 @@ ul.tech-list li a.active:before{
  }
 
 .news_wrap{
-    border: 1px solid #707070;
+    border-top: 1px solid #707070;
 }
 .news_list_h{
     margin:15px 0px;

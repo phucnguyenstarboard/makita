@@ -653,7 +653,7 @@ function education_zone_site_header(){
                        </div>
 
                    </div>
-                   <div class="col-7 p-0">
+                   <div class="col-8 p-0">
                        <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
                        </nav><!-- #site-navigation -->
