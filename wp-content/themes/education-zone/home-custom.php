@@ -218,7 +218,7 @@ $lg = get_locale();
                                                 <div class="search-container  mt-5 mb-3">
                                                     <div class="search_wrap d-inline-block">
                                                         <div class="newsletter_class">
-                                                            <?php echo do_shortcode('[cf7form cf7key="new letter"]'); ?>
+                                                            <?php echo do_shortcode('[cf7form cf7key="Newsletter"]'); ?>
                                                         </div>
                                                     </div>
                                                 </div>
