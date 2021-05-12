@@ -575,7 +575,7 @@ function my_easymail_add_subscriber ( $cf7 ) {
 	$submission = WPCF7_Submission::get_instance();
 	$data = $submission->get_posted_data();
 
-	$fields['email'] = $data["news_mail"];
+	$fields['email'] = $data["email-newsletter"];
 	if ( function_exists ('alo_em_add_subscriber') && is_email( $fields['email'] ) )
 	{
 		alo_em_add_subscriber( $fields, 1, alo_em_get_language(true) );
