@@ -173,7 +173,7 @@ $lg = get_locale();
                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p class="news_date_h m-0"><?php the_date('d.F.Y'); ?></p>
+                                                <p class="news_date_h m-0"><?php echo get_the_date('d.M.Y'); ?></p>
                                                 <h3 class="news_title_h m-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                             </div>
                                         </div>
@@ -187,7 +187,7 @@ $lg = get_locale();
                             <div class="news_block_middle">
                                 <div class="text-leff" >
                                     <div class="row">
-                                        <div class="col-sm-8 col-12 text-center" data-cattype="1802">
+                                        <div class="col-sm-8 col-12 text-left tel_footer_c" data-cattype="1802">
                                             <?php
                                             $arr_footer = array(
                                                 'post_type'=>'page',
@@ -214,12 +214,12 @@ $lg = get_locale();
                                                     </h1>
                                                 <?php endif; endwhile; ?>
                                             <div>
-                                                <div class="search-container text-center mt-5 mb-3">
+                                                
+                                                <div class="search-container  mt-5 mb-3">
                                                     <div class="search_wrap d-inline-block">
-                                                        <form action="generalenquiry?" class="newsletterEnquiry" method="post" data-fail-pageid="505" data-pass-pageid="505" id="inlineEnquiry">
-                                                            <input name="Subjust" type="hidden" value="Newsletter subscription request" /> <input class="input-news" type="text" placeholder="Newsletter Sign Up" name="email" />
-                                                            <button class="submit-news hvr-rectangle-out" type="submit"><i class="fa fa-caret-right"></i></button>
-                                                        </form>
+                                                        <div class="newsletter_class">
+                                                            <?php echo do_shortcode('[cf7form cf7key="new letter"]'); ?>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -249,8 +249,15 @@ $lg = get_locale();
             </div>
         </div>
     </div>
+ 
 <script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery(".submit_letter").val('');
+    })
+
     jQuery(function(){
+        
+
         jQuery('.responsive_featured ').owlCarousel({
             loop:false,
             autoplay:false,
@@ -324,6 +331,7 @@ $lg = get_locale();
         jQuery(".border-shadow-right a").removeClass("active");
         jQuery(this).find('a').addClass("active");
     })
+   
 </script>
 <?php
 get_footer();

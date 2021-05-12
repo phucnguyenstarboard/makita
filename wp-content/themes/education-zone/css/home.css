@@ -1626,6 +1626,36 @@ span.search-instance {
     display: inline-block;
     text-transform: capitalize;
 }
+.tel_footer_c{
+    padding-left: 14%;
+}
+.mail_lt{
+    width: 80% !important;
+    float: left;
+}
+.submit_lt {
+    width: 20% !important;
+    float:left;
+}
+.newsletter_class .wpcf7 .field {
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+}
+.newsletter_class input[type="email"]{
+    border-radius: 0px !important;
+    padding-left: 10px !important;
+    box-sizing: border-box;
+}
+.newsletter_class .wpcf7 input[type="submit"]{
+    width: 11px !important;
+    height: 12px !important;
+    margin-top: 0px !important;
+    background: #00909e url('../images/arrow_submit.png') no-repeat center center !important; 
+    border-radius: 0px !important;
+}
+.newsletter_wrap{
+    width: 80%;
+}
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{
         font-size: 22px;
