@@ -9,14 +9,15 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
 
-		<?php
+        <?php
 		if ( have_posts() ) : ?>
 
-			<?php
+        <?php
 			/* Start the Loop */
+             $index_s = 1;
 			while ( have_posts() ) : the_post();
 
 				/**
@@ -24,8 +25,10 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
+                //echo $index_s;
+                set_query_var( "index_p", $index_s); 
 				get_template_part( 'template-parts/content', 'search' );
-
+                $index_s++;
 			endwhile;
 
 			the_posts_pagination( 
@@ -42,8 +45,8 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+    </main><!-- #main -->
+</section><!-- #primary -->
 
 <?php
 get_sidebar();

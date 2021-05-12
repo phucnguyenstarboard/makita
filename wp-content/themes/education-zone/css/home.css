@@ -1615,6 +1615,17 @@ button.scroltop span {
 .popular_box img:hover{
     transform: scale(1.3);
 }
+.selection{
+  color: #fff;
+  background: #169eb7;
+}
+span.search-instance {
+    font-weight: bold;
+    background: #f0e68c;
+    padding: 2px;
+    display: inline-block;
+    text-transform: capitalize;
+}
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{
         font-size: 22px;

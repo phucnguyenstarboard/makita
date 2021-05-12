@@ -196,6 +196,11 @@ function education_zone_scripts() {
 	wp_enqueue_style( 'home', get_template_directory_uri().'/css/home.css' );
 	wp_enqueue_style( 'flaticon', get_template_directory_uri().'/css/flaticon.min.css' );
 	wp_enqueue_style( 'flaticon', get_template_directory_uri().'/css/animate.min.css' );
+	
+	if(is_search()){
+		wp_enqueue_style( 'search-results-simple', get_template_directory_uri().'/css/search-results-simple.css' );
+	}
+
 
 	
 	if( is_archive() ){
@@ -564,3 +569,19 @@ function ct_pagination($pages = '', $range = 2)
 		echo "</ul></nav>\n";
 	}
 }
+add_filter( 'relevanssi_block_one_letter_searches', '__return_false' );
+
+function my_easymail_add_subscriber ( $cf7 ) {
+	$submission = WPCF7_Submission::get_instance();
+	$data = $submission->get_posted_data();
+
+	$fields['email'] = $data["news_mail"];
+	if ( function_exists ('alo_em_add_subscriber') && is_email( $fields['email'] ) )
+	{
+		alo_em_add_subscriber( $fields, 1, alo_em_get_language(true) );
+	}
+	return $cf7;
+}
+add_action( 'wpcf7_before_send_mail', 'my_easymail_add_subscriber' );
+
+
