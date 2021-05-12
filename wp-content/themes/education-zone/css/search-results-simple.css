@@ -29,6 +29,7 @@ strong.search-excerpt {
 }
 .search .site-content #primary .post, .search .site-content #primary .page{
     padding:0px;
+    margin: 0px;
 }
 .pagination .page-numbers {
     font: normal 16px "roboto" !important;
