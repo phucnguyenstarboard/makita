@@ -9,7 +9,9 @@
     "news": {},
     "catalog": {},
     "dealer": {},
-    "product_popular":{}
+    "product_popular":{},
+    "easymail_subscribers":{}
+
 
   },
   "post_fields": {
@@ -25,7 +27,12 @@
     "title_makita":{},
     "content_makita":{},
     "footer_tel1":{},
-    "footer_tel2":{}
+    "note_of_tel_1":{},
+    "footer_tel2":{},
+    "note_of_tel_2":{},
+    "footer_tel2":{},
+    "fax_of_footer":{},
+    "note_of_fax":{}
   },  
   "taxonomies": {
     "subsidiary-category": {},

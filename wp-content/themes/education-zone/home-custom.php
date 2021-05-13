@@ -198,12 +198,19 @@ $lg = get_locale();
                                             <?php while($makita_footer->have_posts()): $makita_footer->the_post(); ?>
                                                 <?php
                                                 $tel1 = get_post_meta(get_the_ID(),'footer_tel1',true);
+                                                $tel1_note= get_post_meta(get_the_ID(),'note_of_tel_1',true);
                                                 $tel2= get_post_meta(get_the_ID(),'footer_tel2',true);
+                                                $tel2_note= get_post_meta(get_the_ID(),'note_of_tel_2',true);
+                                                $fax= get_post_meta(get_the_ID(),'fax_of_footer',true);
+                                                $fax_note= get_post_meta(get_the_ID(),'note_of_fax',true);
                                                 ?>
                                                 <?php if(!empty($tel1)): ?>
                                                     <h1 class="tel mt-2 mb-2 ">
                                                         <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
                                                         <a href="tel: <?php echo  $tel1; ?>"><?php echo $tel1; ?></a>
+                                                        <?php if(!empty($tel1_note)){ ?>
+                                                            <span> (<?php echo $tel1_note; ?>) </span>
+                                                        <?php } ?>
                                                     </h1>
                                                 <?php endif;
                                                 if(!empty($tel2)):
@@ -211,6 +218,19 @@ $lg = get_locale();
                                                     <h1 class="tel mt-2 mb-2 ">
                                                         <img src="<?php echo get_template_directory_uri() ?>/images/tel_footer.png">
                                                         <a href="tel: <?php echo $tel2; ?>"><?php echo $tel2; ?></a>
+                                                        <?php if(!empty($tel2_note)){ ?>
+                                                            <span> (<?php echo $tel2_note; ?>) </span>
+                                                        <?php } ?>
+                                                    </h1>
+                                                <?php endif; ?>
+                                                <?php if(!empty($fax)):
+                                                    ?>
+                                                    <h1 class="tel mt-2 mb-2 fax ">
+                                                        <img src="<?php echo get_template_directory_uri() ?>/images/fax_icon.png">
+                                                        <?php echo $fax; ?>
+                                                        <?php if(!empty($fax_note)){ ?>
+                                                            <span> (<?php echo $fax_note; ?>) </span>
+                                                        <?php } ?>
                                                     </h1>
                                                 <?php endif; endwhile; ?>
                                             <div>

@@ -1656,6 +1656,9 @@ span.search-instance {
 .newsletter_wrap{
     width: 80%;
 }
+.fax{
+    color: #00909e;
+}
 @media (max-width: 480px){
     [data-cattype="1802"] h1.tel{
         font-size: 22px;
