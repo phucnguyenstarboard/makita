@@ -131,7 +131,7 @@
                         <span>Makita reserves the right to change specification of products without notice. Standard equipment and specifications may differ from country to country. Some products published here may not be sold in your country. The contents of the leaflets can be different from current products since they are original.
                             <br>
                             </span>
-                            <p>Copyright © 2021 Makita Power Tools (Vietname) Co.,Ltd. All Rights Reserved.
+                            <p>Copyright © 2021 Makita Power Tools (Vietnam) Co.,Ltd. All Rights Reserved.
                                 <span style="color: #ccc;">Web powered by
                                     <a href="https://www.entertop.com.my" rel="nofollow" title="Entertop | Web design company in Malaysia" target="_blank" style="color: #ccc;">Entertop</a>.
                                 </span>

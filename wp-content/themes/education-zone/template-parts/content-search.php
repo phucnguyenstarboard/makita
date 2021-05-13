@@ -23,11 +23,9 @@
     <div class="text">
         <header class="entry-header">			  	
             <?php //relevanssi_the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><span class="search_index">'.$index_p.'. </span><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-            <h2 class="entry-title" itemprop="headline">
-                <span class="search_index"><?php echo $index_p ?>. </span>
-                <a href="<?php echo  get_permalink() ; ?>" rel="bookmark">
-                    <?php echo $title = str_ireplace( $s, '<strong class="search-excerpt">'.$s.'</strong>', get_the_title() ) ?>
-                </a>
+           <h2 class="entry-title" itemprop="headline">
+                <span class="search_index"><?php echo $index_p; ?>. </span>
+                <a href="<?php echo esc_url( get_permalink() ) ; ?>" rel="bookmark"><?php the_title(); ?></a>
             </h2>
 
             <?php if(has_category()){ ?>

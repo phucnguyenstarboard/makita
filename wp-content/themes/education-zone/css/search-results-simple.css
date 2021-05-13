@@ -60,3 +60,6 @@ strong.search-excerpt {
 .search .technology {
     text-align: left !important;
 }
+.bsearch_highlight{
+    background-color: #fff875;
+}

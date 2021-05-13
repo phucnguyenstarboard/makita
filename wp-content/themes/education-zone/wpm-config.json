@@ -32,7 +32,17 @@
     "note_of_tel_2":{},
     "footer_tel2":{},
     "fax_of_footer":{},
-    "note_of_fax":{}
+    "note_of_fax":{},
+    "dealer_code":{},
+    "dealer_tel1":{},
+    "dealer_tel2":{},
+    "dealer_fax":{},
+    "dealer_website":{},
+    "dealer_map_image":{},
+    "dealer_map_url":{},
+    "latitude":{},
+    "longitude":{}
+
   },  
   "taxonomies": {
     "subsidiary-category": {},
