@@ -553,10 +553,13 @@ function ct_pagination($pages = '', $range = 2)
 	if(1 != $pages)
 	{
 		echo "<nav aria-label='Page navigation'>  <ul class='pagination m-0 justify-content-center '>";
-		if($paged > 2 && $paged > $range+1 && $showitems < $pages)
+		// if($paged > 1 && $paged > $range+1 && $showitems < $pages)
+		// 	echo "<li class='page-item'><a class='page-link' href='".get_pagenum_link(1)."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
+			
+		if($paged > 1 && $showitems < $pages){
 			echo "<li class='page-item'><a class='page-link' href='".get_pagenum_link(1)."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
-		if($paged > 1 && $showitems < $pages)
 			echo "<li class='page-item'><a class='page-link' href='".get_pagenum_link($paged - 1)."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
+		}
 		for ($i=1; $i <= $pages; $i++)
 		{
 			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
@@ -564,9 +567,13 @@ function ct_pagination($pages = '', $range = 2)
 				echo ($paged == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".get_pagenum_link($i)."' class=\"page-link\">".$i."</a></li>";
 			}
 		}
-		if ($paged < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link($paged + 1)."\"><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
-		if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
+		if ($paged < $pages && $showitems < $pages){
+			echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link($paged + 1)."\"><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
+		echo " <li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
 		echo "</ul></nav>\n";
+		} 
+		// if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
+		// echo "</ul></nav>\n";
 	}
 }
 add_filter( 'relevanssi_block_one_letter_searches', '__return_false' );
@@ -583,5 +590,6 @@ function my_easymail_add_subscriber ( $cf7 ) {
 	return $cf7;
 }
 add_action( 'wpcf7_before_send_mail', 'my_easymail_add_subscriber' );
+
 
 

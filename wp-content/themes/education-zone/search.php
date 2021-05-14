@@ -31,13 +31,18 @@ get_header(); ?>
                 $index_s++;
 			endwhile;
 
-			the_posts_pagination( 
-				array(
-					'prev_text'          => __( '&lt;', 'education-zone' ),
-					'next_text'          => __( '&gt', 'education-zone' ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'education-zone' ) . ' </span>',
-				) 
-			);
+			// the_posts_pagination( 
+			// 	array(
+			// 		'prev_text'          => __( '&lt;', 'education-zone' ),
+			// 		'next_text'          => __( '&gt', 'education-zone' ),
+			// 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'education-zone' ) . ' </span>',
+			// 	) 
+			// );
+			if (function_exists("ct_pagination")) :
+
+                             ct_pagination();
+
+                         endif;
 
 		else :
 

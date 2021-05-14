@@ -63,3 +63,9 @@ strong.search-excerpt {
 .bsearch_highlight{
     background-color: #fff875;
 }
+.page-item .page-link {
+    color: #008396;
+}
+.page-item.active .page-link {
+    background-color: #008396;
+}
