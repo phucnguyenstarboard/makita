@@ -598,7 +598,195 @@ function my_easymail_add_subscriber ( $cf7 ) {
 }
 add_action( 'wpcf7_before_send_mail', 'my_easymail_add_subscriber' );
 
-add_filter( 'post_type_labels_accessory', 'news_rename_labels' );
+
+
+
+//translate accessory admin
+add_filter( 'post_type_labels_accessory', 'accessory_rename_labels' );
+
+/**
+* Rename default post type to accessory
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function accessory_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Accessory','education-zone');
+    $labels->singular_name = __('Accessory','education-zone');
+    $labels->add_new = __('Add Accessory','education-zone');
+    $labels->add_new_item = __('Add Accessory','education-zone');
+    $labels->edit_item = __('Edit Accessory','education-zone');
+    $labels->new_item = __('New Accessory','education-zone');
+    $labels->view_item = __('View Accessory','education-zone');
+    $labels->view_items = __('View Accessory','education-zone');
+    $labels->search_items = __('Search Accessory','education-zone');
+    $labels->not_found = __('No Accessory found.','education-zone');
+    $labels->not_found_in_trash = __('No Accessory found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Accessory','education-zone'); // Not for "post"
+    $labels->archives = __('Accessory Archives','education-zone');
+    $labels->attributes = __('Accessory Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Accessory','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Accessory','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Accessory list','education-zone');
+    $labels->items_list_navigation = __('Accessory list navigation','education-zone');
+    $labels->items_list = __('Accessory list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Accessories','education-zone');
+    $labels->all_items = __('All Accessories','education-zone');
+    $labels->name_admin_bar = __('Accessory','education-zone');
+
+    return $labels;
+}
+
+
+//translate branch admin
+add_filter( 'post_type_labels_branch', 'branch_rename_labels' );
+
+/**
+* Rename default post type to branch
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function branch_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Branch','education-zone');
+    $labels->singular_name = __('Branch','education-zone');
+    $labels->add_new = __('Add Branch','education-zone');
+    $labels->add_new_item = __('Add Branch','education-zone');
+    $labels->edit_item = __('Edit Branch','education-zone');
+    $labels->new_item = __('New Branch','education-zone');
+    $labels->view_item = __('View Branch','education-zone');
+    $labels->view_items = __('View Branch','education-zone');
+    $labels->search_items = __('Search Branch','education-zone');
+    $labels->not_found = __('No Branch found.','education-zone');
+    $labels->not_found_in_trash = __('No Branch found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Branch','education-zone'); // Not for "post"
+    $labels->archives = __('Branch Archives','education-zone');
+    $labels->attributes = __('Branch Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Branch','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Branch','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Branch list','education-zone');
+    $labels->items_list_navigation = __('Branch list navigation','education-zone');
+    $labels->items_list = __('Branch list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Branches','education-zone');
+    $labels->all_items = __('All Branches','education-zone');
+    $labels->name_admin_bar = __('Branch','education-zone');
+
+    return $labels;
+}
+
+
+//translate catalog admin
+add_filter( 'post_type_labels_catalog', 'catalog_rename_labels' );
+
+/**
+* Rename default post type to catalog
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function catalog_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Catalog','education-zone');
+    $labels->singular_name = __('Catalog','education-zone');
+    $labels->add_new = __('Add Catalog','education-zone');
+    $labels->add_new_item = __('Add Catalog','education-zone');
+    $labels->edit_item = __('Edit Catalog','education-zone');
+    $labels->new_item = __('New Catalog','education-zone');
+    $labels->view_item = __('View Catalog','education-zone');
+    $labels->view_items = __('View Catalog','education-zone');
+    $labels->search_items = __('Search Catalog','education-zone');
+    $labels->not_found = __('No Catalog found.','education-zone');
+    $labels->not_found_in_trash = __('No Catalog found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Catalog','education-zone'); // Not for "post"
+    $labels->archives = __('Catalog Archives','education-zone');
+    $labels->attributes = __('Catalog Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Catalog','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Catalog','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Catalog list','education-zone');
+    $labels->items_list_navigation = __('Catalog list navigation','education-zone');
+    $labels->items_list = __('Catalog list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Catalogs','education-zone');
+    $labels->all_items = __('All Catalogs','education-zone');
+    $labels->name_admin_bar = __('Catalog','education-zone');
+
+    return $labels;
+}
+
+
+//translate dealer admin
+add_filter( 'post_type_labels_dealer', 'dealer_rename_labels' );
+
+/**
+* Rename default post type to dealer
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function dealer_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Dealer','education-zone');
+    $labels->singular_name = __('Dealer','education-zone');
+    $labels->add_new = __('Add Dealer','education-zone');
+    $labels->add_new_item = __('Add Dealer','education-zone');
+    $labels->edit_item = __('Edit Dealer','education-zone');
+    $labels->new_item = __('New Dealer','education-zone');
+    $labels->view_item = __('View Dealer','education-zone');
+    $labels->view_items = __('View Dealer','education-zone');
+    $labels->search_items = __('Search Dealer','education-zone');
+    $labels->not_found = __('No Dealer found.','education-zone');
+    $labels->not_found_in_trash = __('No Dealer found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Dealer','education-zone'); // Not for "post"
+    $labels->archives = __('Dealer Archives','education-zone');
+    $labels->attributes = __('Dealer Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Dealer','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Dealer','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Dealer list','education-zone');
+    $labels->items_list_navigation = __('Dealer list navigation','education-zone');
+    $labels->items_list = __('Dealer list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Dealers','education-zone');
+    $labels->all_items = __('All Dealers','education-zone');
+    $labels->name_admin_bar = __('Dealer','education-zone');
+
+    return $labels;
+}
+
+
+//translate news admin
+add_filter( 'post_type_labels_news', 'news_rename_labels' );
 
 /**
 * Rename default post type to news
@@ -610,35 +798,256 @@ add_filter( 'post_type_labels_accessory', 'news_rename_labels' );
 function news_rename_labels( $labels )
 {
     # Labels
-    $labels->name = __('Accessory','education-zone');
-    $labels->singular_name = __('Accessory','education-zone');
-    $labels->add_new = 'Add Accessory';
-    $labels->add_new_item = 'Add Accessory';
-    $labels->edit_item = 'Edit Accessory';
-    $labels->new_item = 'New Accessory';
-    $labels->view_item = 'View Accessory';
-    $labels->view_items = 'View Accessory';
-    $labels->search_items = 'Search Accessory';
-    $labels->not_found = 'No Accessory found.';
-    $labels->not_found_in_trash = 'No Accessory found in Trash.';
-    $labels->parent_item_colon = 'Parent Accessory'; // Not for "post"
-    $labels->archives = 'Accessory Archives';
-    $labels->attributes = 'Accessory Attributes';
-    $labels->insert_into_item = 'Insert into Accessory';
-    $labels->uploaded_to_this_item = 'Uploaded to this Accessory';
-    $labels->featured_image = 'Featured Image';
-    $labels->set_featured_image = 'Set featured image';
-    $labels->remove_featured_image = 'Remove featured image';
-    $labels->use_featured_image = 'Use as featured image';
-    $labels->filter_items_list = 'Filter Accessory list';
-    $labels->items_list_navigation = 'Accessory list navigation';
-    $labels->items_list = 'Accessory list';
+    $labels->name = __('News','education-zone');
+    $labels->singular_name = __('News','education-zone');
+    $labels->add_new = __('Add News','education-zone');
+    $labels->add_new_item = __('Add News','education-zone');
+    $labels->edit_item = __('Edit News','education-zone');
+    $labels->new_item = __('New News','education-zone');
+    $labels->view_item = __('View News','education-zone');
+    $labels->view_items = __('View News','education-zone');
+    $labels->search_items = __('Search News','education-zone');
+    $labels->not_found = __('No News found.','education-zone');
+    $labels->not_found_in_trash = __('No News found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent News','education-zone'); // Not for "post"
+    $labels->archives = __('News Archives','education-zone');
+    $labels->attributes = __('News Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into News','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this News','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter News list','education-zone');
+    $labels->items_list_navigation = __('News list navigation','education-zone');
+    $labels->items_list = __('News list','education-zone');
 
     # Menu
-    $labels->menu_name = __('Accessories','education-zone');
-    $labels->all_items = 'All Accessories';
-    $labels->name_admin_bar = 'Accessory';
+    $labels->menu_name = __('List of News','education-zone');
+    $labels->all_items = __('All List of News','education-zone');
+    $labels->name_admin_bar = __('News','education-zone');
 
     return $labels;
 }
 
+
+//translate product admin
+add_filter( 'post_type_labels_product', 'product_rename_labels' );
+
+/**
+* Rename default post type to product
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function product_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Product','education-zone');
+    $labels->singular_name = __('Product','education-zone');
+    $labels->add_new = __('Add Product','education-zone');
+    $labels->add_new_item = __('Add Product','education-zone');
+    $labels->edit_item = __('Edit Product','education-zone');
+    $labels->new_item = __('New Product','education-zone');
+    $labels->view_item = __('View Product','education-zone');
+    $labels->view_items = __('View Product','education-zone');
+    $labels->search_items = __('Search Product','education-zone');
+    $labels->not_found = __('No Product found.','education-zone');
+    $labels->not_found_in_trash = __('No Product found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Product','education-zone'); // Not for "post"
+    $labels->archives = __('Product Archives','education-zone');
+    $labels->attributes = __('Product Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Product','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Product','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Product list','education-zone');
+    $labels->items_list_navigation = __('Product list navigation','education-zone');
+    $labels->items_list = __('Product list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Products','education-zone');
+    $labels->all_items = __('All Products','education-zone');
+    $labels->name_admin_bar = __('Product','education-zone');
+
+    return $labels;
+}
+
+
+//translate popular product admin
+add_filter( 'post_type_labels_popular_product', 'popular_product_rename_labels' );
+
+/**
+* Rename default post type to popular product
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function popular_product_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Popular Product','education-zone');
+    $labels->singular_name = __('Popular Product','education-zone');
+    $labels->add_new = __('Add Popular Product','education-zone');
+    $labels->add_new_item = __('Add Popular Product','education-zone');
+    $labels->edit_item = __('Edit Popular Product','education-zone');
+    $labels->new_item = __('New Popular Product','education-zone');
+    $labels->view_item = __('View Popular Product','education-zone');
+    $labels->view_items = __('View Popular Product','education-zone');
+    $labels->search_items = __('Search Popular Product','education-zone');
+    $labels->not_found = __('No Popular Product found.','education-zone');
+    $labels->not_found_in_trash = __('No Popular Product found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Popular Product','education-zone'); // Not for "post"
+    $labels->archives = __('Popular Product Archives','education-zone');
+    $labels->attributes = __('Popular Product Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Popular Product','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Popular Product','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Popular Product list','education-zone');
+    $labels->items_list_navigation = __('Popular Product list navigation','education-zone');
+    $labels->items_list = __('Popular Product list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Popular Products','education-zone');
+    $labels->all_items = __('All Popular Products','education-zone');
+    $labels->name_admin_bar = __('Popular Product','education-zone');
+
+    return $labels;
+}
+
+
+//translate subsidiary admin
+add_filter( 'post_type_labels_subsidiary', 'subsidiary_rename_labels' );
+
+/**
+* Rename default post type to subsidiary
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function subsidiary_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Subsidiary','education-zone');
+    $labels->singular_name = __('Subsidiary','education-zone');
+    $labels->add_new = __('Add Subsidiary','education-zone');
+    $labels->add_new_item = __('Add Subsidiary','education-zone');
+    $labels->edit_item = __('Edit Subsidiary','education-zone');
+    $labels->new_item = __('New Subsidiary','education-zone');
+    $labels->view_item = __('View Subsidiary','education-zone');
+    $labels->view_items = __('View Subsidiary','education-zone');
+    $labels->search_items = __('Search Subsidiary','education-zone');
+    $labels->not_found = __('No Subsidiary found.','education-zone');
+    $labels->not_found_in_trash = __('No Subsidiary found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Subsidiary','education-zone'); // Not for "post"
+    $labels->archives = __('Subsidiary Archives','education-zone');
+    $labels->attributes = __('Subsidiary Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Subsidiary','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Subsidiary','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Subsidiary list','education-zone');
+    $labels->items_list_navigation = __('Subsidiary list navigation','education-zone');
+    $labels->items_list = __('Subsidiary list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Subsidiaries','education-zone');
+    $labels->all_items = __('All Subsidiaries','education-zone');
+    $labels->name_admin_bar = __('Subsidiary','education-zone');
+
+    return $labels;
+}
+
+
+//translate technology admin
+add_filter( 'post_type_labels_technology', 'technology_rename_labels' );
+
+/**
+* Rename default post type to technology
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function technology_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Technology','education-zone');
+    $labels->singular_name = __('Technology','education-zone');
+    $labels->add_new = __('Add Technology','education-zone');
+    $labels->add_new_item = __('Add Technology','education-zone');
+    $labels->edit_item = __('Edit Technology','education-zone');
+    $labels->new_item = __('New Technology','education-zone');
+    $labels->view_item = __('View Technology','education-zone');
+    $labels->view_items = __('View Technology','education-zone');
+    $labels->search_items = __('Search Technology','education-zone');
+    $labels->not_found = __('No Technology found.','education-zone');
+    $labels->not_found_in_trash = __('No Technology found in Trash.','education-zone');
+    $labels->parent_item_colon = __('Parent Technology','education-zone'); // Not for "post"
+    $labels->archives = __('Technology Archives','education-zone');
+    $labels->attributes = __('Technology Attributes','education-zone');
+    $labels->insert_into_item = __('Insert into Technology','education-zone');
+    $labels->uploaded_to_this_item = __('Uploaded to this Technology','education-zone');
+    $labels->featured_image = __('Featured Image','education-zone');
+    $labels->set_featured_image = __('Set featured image','education-zone');
+    $labels->remove_featured_image = __('Remove featured image','education-zone');
+    $labels->use_featured_image = __('Use as featured image','education-zone');
+    $labels->filter_items_list = __('Filter Technology list','education-zone');
+    $labels->items_list_navigation = __('Technology list navigation','education-zone');
+    $labels->items_list = __('Technology list','education-zone');
+
+    # Menu
+    $labels->menu_name = __('Technologies','education-zone');
+    $labels->all_items = __('All Technologies','education-zone');
+    $labels->name_admin_bar = __('Technology','education-zone');
+
+    return $labels;
+}
+
+function dealer_region_change_cat_object() {
+    global $wp_taxonomies;
+    $labels = &$wp_taxonomies['dealer-region-category']->labels;
+    $labels->name = __('Dealer Region','education-zone');
+    $labels->singular_name = __('Dealer Region','education-zone');
+    $labels->add_new = __('Add Dealer Region','education-zone');
+    $labels->add_new_item = __('Add Dealer Region','education-zone');
+    $labels->edit_item = __('Edit Dealer Region','education-zone');
+    $labels->new_item = __('Dealer Region','education-zone');
+    $labels->view_item = __('View Dealer Region','education-zone');
+    $labels->search_items = __('Search Dealer Regions','education-zone');
+    $labels->not_found = __('No Dealer Regions found','education-zone');
+    $labels->not_found_in_trash = __('No Dealer Regions found in Trash.','education-zone');
+    $labels->all_items = __('All Dealer Regions','education-zone');
+    $labels->menu_name = __('Dealer Regions','education-zone');
+    $labels->name_admin_bar = __('Dealer Regions','education-zone');
+}
+add_action( 'init', 'dealer_region_change_cat_object' );
+
+function dealer_type_change_cat_object() {
+    global $wp_taxonomies;
+    $labels = &$wp_taxonomies['dealer-type-category']->labels;
+    $labels->name = __('Dealer Type','education-zone');
+    $labels->singular_name = __('Dealer Type','education-zone');
+    $labels->add_new = __('Add Dealer Type','education-zone');
+    $labels->add_new_item = __('Add Dealer Type','education-zone');
+    $labels->edit_item = __('Edit Dealer Type','education-zone');
+    $labels->new_item = __('Dealer Type','education-zone');
+    $labels->view_item = __('View Dealer Type','education-zone');
+    $labels->search_items = __('Search Dealer Types','education-zone');
+    $labels->not_found = __('No Dealer Types found','education-zone');
+    $labels->not_found_in_trash = __('No Dealer Types found in Trash.','education-zone');
+    $labels->all_items = __('All Dealer Types','education-zone');
+    $labels->menu_name = __('Dealer Types','education-zone');
+    $labels->name_admin_bar = __('Dealer Types','education-zone');
+}
+add_action( 'init', 'dealer_type_change_cat_object' );
