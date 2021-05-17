@@ -694,49 +694,49 @@ function branch_rename_labels( $labels )
 
 
 //translate catalog admin
-add_filter( 'post_type_labels_catalog', 'catalog_rename_labels' );
+// add_filter( 'post_type_labels_catalog', 'catalog_rename_labels' );
 
-/**
-* Rename default post type to catalog
-*
-* @param object $labels
-* @hooked post_type_labels_post
-* @return object $labels
-*/
-function catalog_rename_labels( $labels )
-{
-    # Labels
-    $labels->name = __('Catalog','education-zone');
-    $labels->singular_name = __('Catalog','education-zone');
-    $labels->add_new = __('Add Catalog','education-zone');
-    $labels->add_new_item = __('Add Catalog','education-zone');
-    $labels->edit_item = __('Edit Catalog','education-zone');
-    $labels->new_item = __('New Catalog','education-zone');
-    $labels->view_item = __('View Catalog','education-zone');
-    $labels->view_items = __('View Catalog','education-zone');
-    $labels->search_items = __('Search Catalog','education-zone');
-    $labels->not_found = __('No Catalog found.','education-zone');
-    $labels->not_found_in_trash = __('No Catalog found in Trash.','education-zone');
-    $labels->parent_item_colon = __('Parent Catalog','education-zone'); // Not for "post"
-    $labels->archives = __('Catalog Archives','education-zone');
-    $labels->attributes = __('Catalog Attributes','education-zone');
-    $labels->insert_into_item = __('Insert into Catalog','education-zone');
-    $labels->uploaded_to_this_item = __('Uploaded to this Catalog','education-zone');
-    $labels->featured_image = __('Featured Image','education-zone');
-    $labels->set_featured_image = __('Set featured image','education-zone');
-    $labels->remove_featured_image = __('Remove featured image','education-zone');
-    $labels->use_featured_image = __('Use as featured image','education-zone');
-    $labels->filter_items_list = __('Filter Catalog list','education-zone');
-    $labels->items_list_navigation = __('Catalog list navigation','education-zone');
-    $labels->items_list = __('Catalog list','education-zone');
+// /**
+// * Rename default post type to catalog
+// *
+// * @param object $labels
+// * @hooked post_type_labels_post
+// * @return object $labels
+// */
+// function catalog_rename_labels( $labels )
+// {
+//     # Labels
+//     $labels->name = __('Catalog','education-zone');
+//     $labels->singular_name = __('Catalog','education-zone');
+//     $labels->add_new = __('Add Catalog','education-zone');
+//     $labels->add_new_item = __('Add Catalog','education-zone');
+//     $labels->edit_item = __('Edit Catalog','education-zone');
+//     $labels->new_item = __('New Catalog','education-zone');
+//     $labels->view_item = __('View Catalog','education-zone');
+//     $labels->view_items = __('View Catalog','education-zone');
+//     $labels->search_items = __('Search Catalog','education-zone');
+//     $labels->not_found = __('No Catalog found.','education-zone');
+//     $labels->not_found_in_trash = __('No Catalog found in Trash.','education-zone');
+//     $labels->parent_item_colon = __('Parent Catalog','education-zone'); // Not for "post"
+//     $labels->archives = __('Catalog Archives','education-zone');
+//     $labels->attributes = __('Catalog Attributes','education-zone');
+//     $labels->insert_into_item = __('Insert into Catalog','education-zone');
+//     $labels->uploaded_to_this_item = __('Uploaded to this Catalog','education-zone');
+//     $labels->featured_image = __('Featured Image','education-zone');
+//     $labels->set_featured_image = __('Set featured image','education-zone');
+//     $labels->remove_featured_image = __('Remove featured image','education-zone');
+//     $labels->use_featured_image = __('Use as featured image','education-zone');
+//     $labels->filter_items_list = __('Filter Catalog list','education-zone');
+//     $labels->items_list_navigation = __('Catalog list navigation','education-zone');
+//     $labels->items_list = __('Catalog list','education-zone');
 
-    # Menu
-    $labels->menu_name = __('Catalogs','education-zone');
-    $labels->all_items = __('All Catalogs','education-zone');
-    $labels->name_admin_bar = __('Catalog','education-zone');
+//     # Menu
+//     $labels->menu_name = __('Catalogs','education-zone');
+//     $labels->all_items = __('All Catalogs','education-zone');
+//     $labels->name_admin_bar = __('Catalog','education-zone');
 
-    return $labels;
-}
+//     return $labels;
+// }
 
 
 //translate dealer admin
@@ -878,7 +878,7 @@ function product_rename_labels( $labels )
 
 
 //translate popular product admin
-add_filter( 'post_type_labels_popular_product', 'popular_product_rename_labels' );
+add_filter( 'post_type_labels_product_popular', 'popular_product_rename_labels' );
 
 /**
 * Rename default post type to popular product
