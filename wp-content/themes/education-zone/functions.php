@@ -382,11 +382,11 @@ require get_template_directory() . '/inc/woocommerce-functions.php';
 require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 
 
-add_filter( 'wpm_post_post_config', '__return_null' );
+//add_filter( 'wpm_post_post_config', '__return_null' );
 
 /* hidden add to card button */
-	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+//	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
 add_action( 'wp_enqueue_scripts', 'addcssAndScripts');
 function addcssAndScripts()
@@ -405,14 +405,21 @@ function addcssAndScripts()
 function add_retailer_sendout_admin_menu() {
 	$slug = 'post.php?post=249&action=edit';
 
-	add_menu_page( 'Retailer Sendout', 'About Makita Vietnam', 'edit_pages', $slug,
+	add_menu_page( 'About Makita Vietnam', 'About Makita Vietnam', 'edit_pages', $slug,
 		'', 'dashicons-admin-page', 25   );
 }
 add_action( 'admin_menu', 'add_retailer_sendout_admin_menu' );
 
 remove_filter( 'sanitize_title', 'sanitize_title_with_dashes' );
 
-
+add_action('admin_menu', 'policy_menu');
+function policy_menu(){
+	$slug = 'post.php?post=249&action=edit';
+	$main_icon_url = get_template_directory_uri().'/images/privacy-policy-20.png';
+    add_menu_page(__('Warranty Policy'), __('Warranty Policy'), 'edit_pages', $slug, '',$main_icon_url,25 );
+    add_submenu_page($slug, 'Submenu Page Title', 'Whatever You Want', 'manage_options', 'my-menu' );
+    add_submenu_page('my-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'my-menu2' );
+}
 /*custom category subsidiaries */
 
 function subsidiary_taxonomy() {
@@ -591,5 +598,47 @@ function my_easymail_add_subscriber ( $cf7 ) {
 }
 add_action( 'wpcf7_before_send_mail', 'my_easymail_add_subscriber' );
 
+add_filter( 'post_type_labels_accessory', 'news_rename_labels' );
 
+/**
+* Rename default post type to news
+*
+* @param object $labels
+* @hooked post_type_labels_post
+* @return object $labels
+*/
+function news_rename_labels( $labels )
+{
+    # Labels
+    $labels->name = __('Accessory','education-zone');
+    $labels->singular_name = __('Accessory','education-zone');
+    $labels->add_new = 'Add Accessory';
+    $labels->add_new_item = 'Add Accessory';
+    $labels->edit_item = 'Edit Accessory';
+    $labels->new_item = 'New Accessory';
+    $labels->view_item = 'View Accessory';
+    $labels->view_items = 'View Accessory';
+    $labels->search_items = 'Search Accessory';
+    $labels->not_found = 'No Accessory found.';
+    $labels->not_found_in_trash = 'No Accessory found in Trash.';
+    $labels->parent_item_colon = 'Parent Accessory'; // Not for "post"
+    $labels->archives = 'Accessory Archives';
+    $labels->attributes = 'Accessory Attributes';
+    $labels->insert_into_item = 'Insert into Accessory';
+    $labels->uploaded_to_this_item = 'Uploaded to this Accessory';
+    $labels->featured_image = 'Featured Image';
+    $labels->set_featured_image = 'Set featured image';
+    $labels->remove_featured_image = 'Remove featured image';
+    $labels->use_featured_image = 'Use as featured image';
+    $labels->filter_items_list = 'Filter Accessory list';
+    $labels->items_list_navigation = 'Accessory list navigation';
+    $labels->items_list = 'Accessory list';
+
+    # Menu
+    $labels->menu_name = __('Accessories','education-zone');
+    $labels->all_items = 'All Accessories';
+    $labels->name_admin_bar = 'Accessory';
+
+    return $labels;
+}
 
