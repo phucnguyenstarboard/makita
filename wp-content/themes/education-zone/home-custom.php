@@ -6,6 +6,7 @@
 get_header();
 $lg = get_locale();
 ?>
+
     <div id="content" class="site-content home-content">
         <?php
         echo do_shortcode('[smartslider3 slider="2"]');
@@ -27,10 +28,10 @@ $lg = get_locale();
                             <a href="<?php echo get_post_meta(get_the_ID(),'attached_link',true) ?>">
                                 <?php the_post_thumbnail('full'); ?>
                             </a>
-                            <div class="popular_info">
+                            <div class="popular_info ">
                                 <h3 class="popular_title m-0"><?php the_title(); ?></h3>
                                 <div class="popular_expert"><?php the_excerpt(); ?></div>
-                                <div  class="p_more"><a href="<?php echo get_post_meta(get_the_ID(),'attached_link',true) ?>"><?php echo __('View detail','education-zone') ?></a></div>
+                                 <div  class="p_more"><a href="<?php echo get_post_meta(get_the_ID(),'attached_link',true) ?>"><?php echo __('View detail','education-zone') ?></a></div>
                             </div>
                         </div>
                     </div>
@@ -41,9 +42,9 @@ $lg = get_locale();
         <div class="product_featured">
             <h1 class="m-t50 ">
                 <?php if($lg == 'en_US'){
-                    echo "Featured Products" ;
+                    echo "New Tools" ;
                 }else{
-                    echo "Sản phẩm nổi bật" ;
+                    echo "Sản Phẩm Mới" ;
                 }
 
                 ?>
@@ -280,13 +281,15 @@ $lg = get_locale();
 
         jQuery('.responsive_featured ').owlCarousel({
             loop:false,
-            autoplay:false,
-            autoplayTimeout:2000,
+            autoplay:true,
+            autoplayTimeout:3000,
             margin:0,
             nav:true,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             items:4,
             dots: false,
+            rtl:true,
+            loop:true,
             //animateOut:'fadeOut',
                 responsive : {
                     // breakpoint from 0 up
@@ -315,13 +318,15 @@ $lg = get_locale();
     jQuery(function(){
         jQuery('.accessory_featured ').owlCarousel({
             loop:false,
-            autoplay:false,
-            autoplayTimeout:2000,
+            autoplay:true,
+            autoplayTimeout:3000,
             margin:30,
             nav:true,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             items:4,
             dots: false,
+            rtl:true,
+            loop:true,
             //animateOut:'fadeOut',
             responsive : {
                 // breakpoint from 0 up

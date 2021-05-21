@@ -643,7 +643,7 @@ function education_zone_site_header(){
            <div class="header-bottom">
                 <div class="container-fluid"> 
                     <div class="row">
-                   <div class="col text-center p-0 ">
+                   <div class="col-1-5 text-center p-0 ">
                        <div class="nav_logo">
                            <?php
                            if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
@@ -655,24 +655,52 @@ function education_zone_site_header(){
                    </div>
                    <div class="col-8 p-0">
                        <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                           <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                           <!-- <?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?> -->
+
+                           <?php 
+                             wp_nav_menu(array(
+                                'theme_location' => 'primary',
+                                'before' => '<class="nav-item active">',      
+                                'menu_class' =>'navbar-nav mr-auto',
+                                'link_before' =>'<span class="nav-link">',      
+                                'link_after' =>'</span>', 
+                                'container' => false, 
+                                'items_wrap' => '%3$s',
+
+                            )); ?>
                        </nav><!-- #site-navigation -->
                    </div>
                    <div class="col nav_right p-0">
                        <div class="header_right">
                            <div id="social-3453-particle" class="g-content g-particle">
                                <div class="bnm-social">
+                                 <?php
+                                    $args_social = array(
+                                       'post_type'=>'page',
+                                        'page_id'=> 744 
+                                    );
+                                    $social_pr = new WP_query( $args_social);
+                                    while ($social_pr->have_posts()): $social_pr->the_post(); 
+                                        $facebook_id =  get_post_meta(get_the_ID(),'facebook_icon',true);
+                                        $youtube_id =  get_post_meta(get_the_ID(),'youtube_icon',true);
+
+                                        $facebook_link =  get_post_meta(get_the_ID(),'facebook_link',true);
+                                        $youtube_link =  get_post_meta(get_the_ID(),'youtube_link',true);
+                                    ?>
                                    <div class="g-social">
-                                       <a target="_blank" href="https://facebook.com/MakitaAustralia" data-uk-tooltip="">
-                                           <span class="fa fa-facebook-official fa-fw fa-3x"></span>
+                                       <a target="_blank" href="<?php echo $facebook_link ; ?>" data-uk-tooltip="">
+                                           <!-- <span class="fa fa-facebook-official fa-fw fa-3x"></span> -->
+                                            <?php echo wp_get_attachment_image($facebook_id,'social-size'); ?>    
                                        </a>
                                        <!-- <a target="_blank" href="https://www.instagram.com/makitaaustralia" data-uk-tooltip="">
                                            <span class="fa fa-instagram fa-fw fa-3x"></span>
                                        </a> -->
-                                       <a target="_blank" href="https://www.youtube.com/user/MakitaAustralia" data-uk-tooltip="">
-                                           <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                                       <a target="_blank" href="<?php echo $youtube_link ; ?>" data-uk-tooltip="">
+                                           <!-- <i class="fa fa-youtube-square" aria-hidden="true"></i> -->
+                                           <?php echo wp_get_attachment_image($youtube_id,'social-size'); ?>
                                        </a>
                                    </div>
+                               <?php endwhile; ?>
                                </div>
                            </div>
                            <div class="header_icon">

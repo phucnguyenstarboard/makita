@@ -402,13 +402,31 @@ function addcssAndScripts()
 }
 
 /* custom admin menu bar */
-function add_retailer_sendout_admin_menu() {
+function add_about_us_admin_menu() {
 	$slug = 'post.php?post=249&action=edit';
+	$arr = array(
+		"post_type" => "page",
+		"page_id" => 249
+	);
+	$about_p = new WP_Query($arr);
+	while ($about_p->have_posts()): $about_p->the_post(); 
+		$title_ab = get_the_title();
+	endwhile;	
 
-	add_menu_page( 'About Makita Vietnam', 'About Makita Vietnam', 'edit_pages', $slug,
+	add_menu_page( $title_ab, $title_ab, 'edit_pages', $slug,
 		'', 'dashicons-admin-page', 25   );
 }
-add_action( 'admin_menu', 'add_retailer_sendout_admin_menu' );
+add_action( 'admin_menu', 'add_about_us_admin_menu' );
+
+/* custom admin menu bar for social */
+function add_social_admin_menu() {
+	$slug = 'post.php?post=744&action=edit';
+	$title_so = get_the_title(744);
+
+	add_menu_page( $title_so, $title_so, 'edit_pages', $slug,
+		'', 'dashicons-admin-page', 25   );
+}
+add_action( 'admin_menu', 'add_social_admin_menu' );
 
 remove_filter( 'sanitize_title', 'sanitize_title_with_dashes' );
 
@@ -523,6 +541,9 @@ function woocommerce_support() {
 
 //add custom thumnail size
 add_image_size('news-size',300,120, array('center','center'));
+//add custom thumnail size social icon
+add_image_size('social-size',18,18, array('center','center'));
+
 
 //get distance between 2 location
 
@@ -1074,3 +1095,5 @@ function subsidiary_change_cat_object() {
     $labels->name_admin_bar = __('Subsidiary categories','education-zone');
 }
 add_action( 'init', 'subsidiary_change_cat_object' );
+
+//wp_list_pages("link_before=<span>&link_after=</span>");
